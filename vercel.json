@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "outputDirectory": "dist",
+  "routes": [
+    { "src": "/crown-town-phase-2/?", "dest": "/crown-town-phase-2/index.html" },
+    { "src": "/assets/(.*)", "dest": "/assets/$1" },
+    { "src": "/(.*)", "dest": "/index.html" }
+  ]
+}
