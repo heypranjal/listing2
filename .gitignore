@@ -1,0 +1,45 @@
+# ── WordPress core (not committed) ──────────────────────────
+wp-admin/
+wp-includes/
+
+# ── Uploads & media ─────────────────────────────────────────
+wp-content/uploads/
+
+# ── Database (SQLite, local only) ────────────────────────────
+wp-content/database/
+
+# ── Backups ──────────────────────────────────────────────────
+wp-content/ai1wm-backups/
+
+# ── SQLite drop-in & mu-plugins (auto-managed by Studio) ────
+wp-content/db.php
+wp-content/mu-plugins/
+
+# ── Standard/bundled plugins (not custom) ───────────────────
+wp-content/plugins/akismet/
+wp-content/plugins/all-in-one-wp-migration/
+wp-content/plugins/classic-editor/
+wp-content/plugins/crowdsignal-forms/
+wp-content/plugins/gravatar-enhanced/
+wp-content/plugins/gutenberg/
+wp-content/plugins/jetpack/
+wp-content/plugins/layout-grid/
+wp-content/plugins/page-optimize/
+wp-content/plugins/polldaddy/
+
+# ── Stock themes (not custom) ────────────────────────────────
+wp-content/themes/twentytwentythree/
+wp-content/themes/twentytwentyfour/
+wp-content/themes/twentytwentyfive/
+
+# ── WordPress config (contains local secrets) ────────────────
+wp-config.php
+
+# ── OS / editor ──────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# ── Node ─────────────────────────────────────────────────────
+node_modules/
