@@ -18,6 +18,7 @@
         <a href="#ct-highlights">Highlights</a>
         <a href="#ct-payment">Payment Plan</a>
         <a href="#ct-pricing">Pricing</a>
+        <a href="#ct-gallery">Gallery</a>
         <a href="#ct-location">Location</a>
         <a href="#ct-contact" class="ctp-sticky-nav__cta">Enquire Now</a>
       </div>
@@ -293,8 +294,9 @@
         </div>
       </div>
       <div class="ctp-milestone ctp-milestone--last">
-        <div class="ctp-milestone__num ctp-milestone__num--gold">7</div>
-        <div class="ctp-milestone__card ctp-milestone__card--gold">
+        <div class="ctp-milestone__num">7</div>
+        <div class="ctp-milestone__line" aria-hidden="true"></div>
+        <div class="ctp-milestone__card">
           <p class="ctp-milestone__stage">At the time of Possession</p>
           <p class="ctp-milestone__amt">10% of BSP</p>
           <p class="ctp-milestone__note">+ 100% of other charges<br>+ 100% of extra work charges (if any)</p>
@@ -380,6 +382,48 @@
       </ol>
     </div>
 
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     GALLERY
+══════════════════════════════════════════════ -->
+<section class="ctp-section ctp-section--alt" id="ct-gallery">
+  <div class="cp-container">
+    <div class="ctp-section-head">
+      <span class="cp-section-label">Project Gallery</span>
+      <h2 class="ctp-section-title">See It for Yourself</h2>
+      <div class="cp-divider" aria-hidden="true"></div>
+    </div>
+
+    <div class="ctp-gallery-grid">
+      <div class="ctp-gallery-item ctp-gallery-item--main">
+        <div class="ctp-gallery-placeholder">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <span>Image Coming Soon</span>
+        </div>
+      </div>
+      <div class="ctp-gallery-item">
+        <div class="ctp-gallery-placeholder">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <span>Image Coming Soon</span>
+        </div>
+      </div>
+      <div class="ctp-gallery-item">
+        <div class="ctp-gallery-placeholder">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <span>Image Coming Soon</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="ctp-gallery-footer">
+      <button class="ctp-btn-outline ctp-gallery-more-btn" onclick="this.closest('section').querySelector('.ctp-gallery-hint').style.display='block'; this.style.display='none';">
+        View More
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </button>
+      <p class="ctp-gallery-hint" style="display:none;">More images will be available soon. <a href="#ct-contact" style="color:var(--cp-gold);">Contact us</a> for the full brochure.</p>
+    </div>
   </div>
 </section>
 
@@ -718,7 +762,7 @@
 .ctp-milestone__num { width:40px; height:40px; border-radius:50%; background:rgba(201,161,92,0.1); border:1.5px solid rgba(201,161,92,0.3); display:flex; align-items:center; justify-content:center; font-family:var(--font-display); font-size:0.85rem; font-weight:700; color:var(--cp-gold); flex-shrink:0; }
 .ctp-milestone__num--gold { background:var(--cp-gold); color:var(--cp-navy-deep); border-color:var(--cp-gold); }
 .ctp-milestone__line { width:2px; background:rgba(201,161,92,0.15); margin:8px auto 0; min-height:60px; }
-.ctp-milestone--last .ctp-milestone__line { display:none; }
+.ctp-milestone--last .ctp-milestone__line { visibility:hidden; }
 .ctp-milestone__card { background:var(--cp-navy-light); border:1px solid rgba(201,161,92,0.1); border-radius:10px; padding:1rem 1.25rem; margin-bottom:1rem; }
 .ctp-milestone__card--gold { border-color:rgba(201,161,92,0.35); background:rgba(201,161,92,0.07); }
 .ctp-milestone__stage { font-size:0.82rem; color:var(--cp-cream); font-weight:500; margin-bottom:0.3rem; }
@@ -750,6 +794,18 @@
 .ctp-notes-list li strong { color:var(--cp-cream); }
 
 /* Location */
+/* Gallery */
+.ctp-gallery-grid { display:grid; grid-template-columns:1fr 1fr; grid-template-rows:auto auto; gap:1rem; }
+.ctp-gallery-item--main { grid-row:1 / 3; }
+.ctp-gallery-placeholder { background:var(--cp-navy-light); border:1.5px dashed rgba(201,161,92,0.2); border-radius:14px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0.75rem; color:rgba(201,161,92,0.35); min-height:220px; transition:border-color 0.2s; }
+.ctp-gallery-item--main .ctp-gallery-placeholder { min-height:460px; }
+.ctp-gallery-placeholder span { font-size:0.65rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--cp-white-30); }
+.ctp-gallery-item img { width:100%; height:100%; object-fit:cover; border-radius:14px; display:block; }
+.ctp-gallery-footer { display:flex; justify-content:center; margin-top:2rem; flex-direction:column; align-items:center; gap:1rem; }
+.ctp-gallery-more-btn { display:inline-flex; align-items:center; gap:0.5rem; padding:0.7rem 2rem; }
+.ctp-gallery-hint { font-size:0.78rem; color:var(--cp-white-30); text-align:center; }
+@media(max-width:640px){ .ctp-gallery-grid{grid-template-columns:1fr; grid-template-rows:auto;} .ctp-gallery-item--main{grid-row:auto;} .ctp-gallery-item--main .ctp-gallery-placeholder{min-height:240px;} }
+
 .ctp-location-grid { display:grid; grid-template-columns:300px 1fr; gap:2.5rem; align-items:start; }
 @media(max-width:900px){ .ctp-location-grid{grid-template-columns:1fr;} }
 .ctp-location-item { display:flex; align-items:flex-start; gap:1rem; padding:1rem 0; border-bottom:1px solid rgba(201,161,92,0.08); }
