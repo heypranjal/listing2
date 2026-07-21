@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Evara Shades — Caasaa Paandora Luxury Real Estate</title>
+  <meta name="description" content="Evara Shades property listing by Caasaa Paandora. Located in Lucknow, Uttar Pradesh. Contact us to enquire."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="/assets/css/main.css"/>
+  <style>
+    :root {
+      --cp-navy-deep:#0D0F1C; --cp-navy:#12141F; --cp-navy-light:#1A1D2E;
+      --cp-gold:#C9A15C; --cp-gold-light:#D4B06E; --cp-cream:#F5EFE6;
+      --cp-white-70:rgba(245,239,230,.7); --cp-white-30:rgba(245,239,230,.3);
+      --font-display:'Playfair Display',serif; --font-body:'Inter',sans-serif;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    body{background:var(--cp-navy-deep);color:var(--cp-cream);font-family:var(--font-body);}
+    a{color:inherit;text-decoration:none;}
+
+    /* Sticky nav */
+    .pp-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,15,28,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,161,92,.12);}
+    .pp-nav__inner{max-width:1200px;margin:0 auto;padding:.85rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;}
+    .pp-nav__back{display:inline-flex;align-items:center;gap:.4rem;font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--cp-white-30);transition:color .2s;}
+    .pp-nav__back:hover{color:var(--cp-gold);}
+    .pp-nav__name{font-family:var(--font-display);font-size:1rem;font-weight:600;color:var(--cp-cream);}
+    .pp-nav__cta{background:var(--cp-gold);color:var(--cp-navy-deep);border:none;border-radius:50px;padding:.45rem 1.1rem;font-size:.68rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;}
+
+    /* Hero */
+    .pp-hero{min-height:60vh;display:flex;flex-direction:column;justify-content:flex-end;padding-top:70px;background:linear-gradient(135deg,var(--cp-navy-deep) 0%,var(--cp-navy-light) 100%);position:relative;overflow:hidden;}
+    .pp-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(201,161,92,.07) 0%,transparent 65%);pointer-events:none;}
+    .pp-hero__monogram{position:absolute;right:5%;top:50%;transform:translateY(-50%);width:220px;height:220px;border-radius:50%;border:1px solid rgba(201,161,92,.12);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:4rem;font-weight:700;color:rgba(201,161,92,.12);user-select:none;}
+    .pp-hero__inner{max-width:1200px;margin:0 auto;padding:3rem 2rem 4rem;position:relative;z-index:1;}
+    .pp-hero__badge{display:inline-block;background:rgba(201,161,92,.1);border:1px solid rgba(201,161,92,.25);border-radius:50px;padding:.3rem .9rem;font-size:.62rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--cp-gold);margin-bottom:1.25rem;}
+    .pp-hero__title{font-family:var(--font-display);font-size:clamp(2rem,5vw,3.5rem);font-weight:700;color:var(--cp-cream);line-height:1.15;margin-bottom:.75rem;}
+    .pp-hero__sub{font-size:.9rem;color:var(--cp-white-70);margin-bottom:2rem;}
+    .pp-hero__btns{display:flex;gap:1rem;flex-wrap:wrap;}
+    .pp-btn-primary{display:inline-flex;align-items:center;gap:.5rem;background:var(--cp-gold);color:var(--cp-navy-deep);border-radius:50px;padding:.75rem 1.75rem;font-size:.75rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;}
+    .pp-btn-outline{display:inline-flex;align-items:center;gap:.5rem;border:1.5px solid rgba(201,161,92,.4);color:var(--cp-gold);border-radius:50px;padding:.7rem 1.6rem;font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;}
+
+    /* Coming-soon section */
+    .pp-soon{max-width:1200px;margin:0 auto;padding:5rem 2rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
+    .pp-soon__label{font-size:.6rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--cp-gold);margin-bottom:1rem;}
+    .pp-soon__title{font-family:var(--font-display);font-size:2rem;font-weight:700;color:var(--cp-cream);margin-bottom:1rem;line-height:1.25;}
+    .pp-soon__body{font-size:.88rem;color:var(--cp-white-70);line-height:1.75;}
+    .pp-soon__list{list-style:none;margin-top:1.5rem;display:flex;flex-direction:column;gap:.75rem;}
+    .pp-soon__list li{display:flex;align-items:center;gap:.75rem;font-size:.82rem;color:var(--cp-white-70);}
+    .pp-soon__list li::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--cp-gold);flex-shrink:0;}
+    @media(max-width:768px){.pp-soon{grid-template-columns:1fr;gap:2rem;padding:3rem 1.5rem;}}
+
+    /* Form */
+    .pp-form-wrap{background:var(--cp-navy-light);border:1px solid rgba(201,161,92,.12);border-radius:16px;padding:2rem;}
+    .pp-form-title{font-family:var(--font-display);font-size:1.2rem;font-weight:600;color:var(--cp-cream);margin-bottom:1.5rem;}
+    .pp-form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;}
+    @media(max-width:480px){.pp-form-row{grid-template-columns:1fr;}}
+    .pp-form-group{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1rem;}
+    .pp-form-label{font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--cp-white-30);}
+    .pp-form-input{background:rgba(255,255,255,.04);border:1.5px solid rgba(201,161,92,.15);border-radius:8px;padding:.75rem 1rem;color:var(--cp-cream);font-size:.85rem;font-family:var(--font-body);outline:none;width:100%;}
+    .pp-form-input:focus{border-color:var(--cp-gold);background:rgba(201,161,92,.04);}
+    .pp-form-input::placeholder{color:rgba(255,255,255,.2);}
+    .pp-form-submit{width:100%;padding:.9rem;background:var(--cp-gold);color:var(--cp-navy-deep);border:none;border-radius:50px;font-size:.75rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;margin-top:.5rem;}
+    .pp-form-submit:hover{background:var(--cp-gold-light);}
+    .pp-privacy{font-size:.6rem;color:var(--cp-white-30);text-align:center;margin-top:.75rem;}
+
+    /* Footer strip */
+    .pp-footer{text-align:center;padding:2.5rem;border-top:1px solid rgba(201,161,92,.08);}
+    .pp-footer p{font-size:.72rem;color:var(--cp-white-30);}
+    .pp-footer a{color:var(--cp-gold);}
+  </style>
+</head>
+<body>
+
+<nav class="pp-nav">
+  <div class="pp-nav__inner">
+    <a href="/#listings" class="pp-nav__back">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+      All Listings
+    </a>
+    <span class="pp-nav__name">Evara Shades</span>
+    <a href="#enquire" class="pp-nav__cta">Enquire Now</a>
+  </div>
+</nav>
+
+<section class="pp-hero">
+  <div class="pp-hero__monogram" aria-hidden="true">ES</div>
+  <div class="pp-hero__inner">
+    <span class="pp-hero__badge">&#8962; Property Listing</span>
+    <h1 class="pp-hero__title">Evara Shades</h1>
+    <p class="pp-hero__sub">Lucknow, Uttar Pradesh &nbsp;·&nbsp; Managed by Caasaa Paandora</p>
+    <div class="pp-hero__btns">
+      <a href="#enquire" class="pp-btn-primary">
+        Enquire Now
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <a href="/#listings" class="pp-btn-outline">View All Listings</a>
+    </div>
+  </div>
+</section>
+
+<div class="pp-soon" id="enquire">
+  <div>
+    <p class="pp-soon__label">Property Details</p>
+    <h2 class="pp-soon__title">Full Details Coming Soon</h2>
+    <p class="pp-soon__body">We're currently compiling all the details for Evara Shades. In the meantime, our team is ready to answer any questions you may have — pricing, floor plans, availability, and more.</p>
+    <ul class="pp-soon__list">
+      <li>Location: Lucknow, Uttar Pradesh</li>
+      <li>Managed by Caasaa Paandora</li>
+      <li>Contact us directly for current pricing</li>
+      <li>Site visits available on request</li>
+    </ul>
+  </div>
+
+  <div class="pp-form-wrap">
+    <p class="pp-form-title">Send an Enquiry</p>
+    <form onsubmit="event.preventDefault();this.style.display='none';document.getElementById('pp-success-evara-shades').style.display='block';">
+      <div class="pp-form-row">
+        <div class="pp-form-group">
+          <label class="pp-form-label">Full Name</label>
+          <input class="pp-form-input" type="text" placeholder="Your name" required/>
+        </div>
+        <div class="pp-form-group">
+          <label class="pp-form-label">Phone</label>
+          <input class="pp-form-input" type="tel" placeholder="+91 00000 00000" required/>
+        </div>
+      </div>
+      <div class="pp-form-group">
+        <label class="pp-form-label">Email</label>
+        <input class="pp-form-input" type="email" placeholder="you@email.com"/>
+      </div>
+      <div class="pp-form-group">
+        <label class="pp-form-label">Message</label>
+        <input class="pp-form-input" type="text" placeholder="I'm interested in Evara Shades…"/>
+      </div>
+      <button type="submit" class="pp-form-submit">Send Enquiry</button>
+      <p class="pp-privacy">Your information is kept private and never shared.</p>
+    </form>
+    <div id="pp-success-evara-shades" style="display:none;text-align:center;padding:2rem;">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#C9A15C" stroke-width="2" style="margin-bottom:1rem;"><circle cx="12" cy="12" r="10"/><polyline points="8 12 11 15 16 9"/></svg>
+      <p style="font-family:'Playfair Display',serif;font-size:1.1rem;color:#F5EFE6;margin-bottom:.5rem;">Thank you!</p>
+      <p style="font-size:.82rem;color:rgba(245,239,230,.6);">We've received your enquiry and will be in touch shortly.</p>
+    </div>
+  </div>
+</div>
+
+<div class="pp-footer">
+  <p>&copy; 2026 <a href="/">Caasaa Paandora Luxury Real Estate</a>. All rights reserved.</p>
+</div>
+
+</body>
+</html>

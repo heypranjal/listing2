@@ -2,8 +2,25 @@
   "version": 2,
   "outputDirectory": "dist",
   "routes": [
-    { "src": "/crown-town-phase-2/?", "dest": "/crown-town-phase-2/index.html" },
-    { "src": "/assets/(.*)", "dest": "/assets/$1" },
-    { "src": "/(.*)", "dest": "/index.html" }
+    { "src": "/crown-town-phase-2/?",       "dest": "/crown-town-phase-2/index.html" },
+    { "src": "/apna-town/?",                "dest": "/apna-town/index.html" },
+    { "src": "/dwarka-enclave/?",           "dest": "/dwarka-enclave/index.html" },
+    { "src": "/eldeco-trinity/?",           "dest": "/eldeco-trinity/index.html" },
+    { "src": "/evara-shades/?",             "dest": "/evara-shades/index.html" },
+    { "src": "/fb-floret-town/?",           "dest": "/fb-floret-town/index.html" },
+    { "src": "/golden-enclave/?",           "dest": "/golden-enclave/index.html" },
+    { "src": "/grah-emperia/?",             "dest": "/grah-emperia/index.html" },
+    { "src": "/ljk-divinity/?",             "dest": "/ljk-divinity/index.html" },
+    { "src": "/miracle-homes/?",            "dest": "/miracle-homes/index.html" },
+    { "src": "/nature-woods/?",             "dest": "/nature-woods/index.html" },
+    { "src": "/oberoi-villas/?",            "dest": "/oberoi-villas/index.html" },
+    { "src": "/paradise-town/?",            "dest": "/paradise-town/index.html" },
+    { "src": "/prosperity-home-ii/?",       "dest": "/prosperity-home-ii/index.html" },
+    { "src": "/shyama-enclave/?",           "dest": "/shyama-enclave/index.html" },
+    { "src": "/sky-om-city/?",              "dest": "/sky-om-city/index.html" },
+    { "src": "/smj-suraksha-enclave/?",     "dest": "/smj-suraksha-enclave/index.html" },
+    { "src": "/tanya-awas/?",               "dest": "/tanya-awas/index.html" },
+    { "src": "/assets/(.*)",                "dest": "/assets/$1" },
+    { "src": "/(.*)",                       "dest": "/index.html" }
   ]
 }
