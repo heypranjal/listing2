@@ -14,7 +14,27 @@
      SECTION 2: HERO
      ====================================================== -->
 <section class="cp-hero" id="hero" aria-label="Hero">
-  <div class="cp-hero__bg" aria-hidden="true"></div>
+  <!-- Hero Slideshow -->
+  <div class="cp-hero__slides" aria-hidden="true">
+    <div class="cp-hero__slide cp-hero__slide--active" style="background-image:url('https://res.cloudinary.com/dadfpmrat/image/upload/v1784751273/WEB_BANNER_CPIV_8_iwphmm.jpg')"></div>
+    <div class="cp-hero__slide" style="background-image:url('https://res.cloudinary.com/dadfpmrat/image/upload/v1784751272/WEB_BANNER_CPIV_9_o8vgft.jpg')"></div>
+    <div class="cp-hero__slide" style="background-image:url('https://res.cloudinary.com/dadfpmrat/image/upload/v1784751272/WEB_BANNER_CPIV_3_pef0zm.jpg')"></div>
+    <div class="cp-hero__slide" style="background-image:url('https://res.cloudinary.com/dadfpmrat/image/upload/v1784751273/WEB_BANNER_CPIV_7_gpjhbh.jpg')"></div>
+    <div class="cp-hero__slide" style="background-image:url('https://res.cloudinary.com/dadfpmrat/image/upload/v1784751272/WEB_BANNER_CPIV_1_e5p3gy.jpg')"></div>
+    <div class="cp-hero__slide" style="background-image:url('https://res.cloudinary.com/dadfpmrat/image/upload/v1784751272/WEB_BANNER_CPIV_6_fae9ll.jpg')"></div>
+    <div class="cp-hero__slide" style="background-image:url('https://res.cloudinary.com/dadfpmrat/image/upload/v1784751272/WEB_BANNER_CPIV_5_wjwdzj.jpg')"></div>
+  </div>
+  <div class="cp-hero__slide-overlay" aria-hidden="true"></div>
+  <!-- Slide Dots -->
+  <div class="cp-hero__dots" role="tablist" aria-label="Slideshow navigation">
+    <button class="cp-hero__dot cp-hero__dot--active" data-slide="0" role="tab" aria-label="Slide 1" aria-selected="true"></button>
+    <button class="cp-hero__dot" data-slide="1" role="tab" aria-label="Slide 2" aria-selected="false"></button>
+    <button class="cp-hero__dot" data-slide="2" role="tab" aria-label="Slide 3" aria-selected="false"></button>
+    <button class="cp-hero__dot" data-slide="3" role="tab" aria-label="Slide 4" aria-selected="false"></button>
+    <button class="cp-hero__dot" data-slide="4" role="tab" aria-label="Slide 5" aria-selected="false"></button>
+    <button class="cp-hero__dot" data-slide="5" role="tab" aria-label="Slide 6" aria-selected="false"></button>
+    <button class="cp-hero__dot" data-slide="6" role="tab" aria-label="Slide 7" aria-selected="false"></button>
+  </div>
 
   <!-- Hero Content -->
   <div class="cp-hero__content">
@@ -59,6 +79,26 @@
       </div>
     </div>
   </div>
+  <script>
+  (function(){
+    var slides = document.querySelectorAll('#hero .cp-hero__slide');
+    var dots = document.querySelectorAll('#hero .cp-hero__dot');
+    var current = 0, timer;
+    function goTo(n){
+      slides[current].classList.remove('cp-hero__slide--active');
+      dots[current].classList.remove('cp-hero__dot--active');
+      dots[current].setAttribute('aria-selected','false');
+      current = (n + slides.length) % slides.length;
+      slides[current].classList.add('cp-hero__slide--active');
+      dots[current].classList.add('cp-hero__dot--active');
+      dots[current].setAttribute('aria-selected','true');
+    }
+    function startTimer(){ timer = setInterval(function(){ goTo(current+1); }, 5000); }
+    function resetTimer(){ clearInterval(timer); startTimer(); }
+    dots.forEach(function(dot,i){ dot.addEventListener('click', function(){ goTo(i); resetTimer(); }); });
+    startTimer();
+  })();
+  </script>
 </section>
 
 <!-- ======================================================
@@ -151,57 +191,20 @@
     <!-- Property Cards Grid -->
     <div class="cp-listings__grid" id="listings-grid">
 
-      <!-- ===== RESIDENTIAL (20) ===== -->
-      <a href="/fb-floret-town/" class="cp-listing-card cp-listing-card--linked" data-type="residential">
-        <div class="cp-listing-card__img">
-          <div class="cp-listing-card__img-border"></div>
-          <div class="cp-listing-card__img-watermark" aria-hidden="true"><svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="38" stroke="#C9A15C" stroke-width="1"/><polygon points="40,4 42,38 76,40 42,42 40,76 38,42 4,40 38,38" fill="none" stroke="#C9A15C" stroke-width="1"/><circle cx="40" cy="40" r="4" fill="#C9A15C"/></svg></div>
-          <div class="cp-listing-card__img-icon">
-            <span class="cp-listing-card__img-initials">FB</span>
-            <span class="cp-listing-card__img-label">Image Coming Soon</span>
-          </div>
-        </div>
-        <div class="cp-listing-card__body">
-          <span class="cp-listing-card__type">&#8962; Residential</span>
-          <h3 class="cp-listing-card__name">FB Floret Town</h3>
-          <div class="cp-listing-card__footer">
-            <span class="cp-listing-card__enquire">View Details <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-            <span class="cp-listing-card__status">Available</span>
-          </div>
-        </div>
-      </a>
+      <!-- ===== 18 FEATURED PAGES ===== -->
 
-      <a href="/tanya-awas/" class="cp-listing-card cp-listing-card--linked" data-type="residential">
+      <a href="/apna-town/" class="cp-listing-card cp-listing-card--linked" data-type="plots">
         <div class="cp-listing-card__img">
           <div class="cp-listing-card__img-border"></div>
           <div class="cp-listing-card__img-watermark" aria-hidden="true"><svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="38" stroke="#C9A15C" stroke-width="1"/><polygon points="40,4 42,38 76,40 42,42 40,76 38,42 4,40 38,38" fill="none" stroke="#C9A15C" stroke-width="1"/><circle cx="40" cy="40" r="4" fill="#C9A15C"/></svg></div>
           <div class="cp-listing-card__img-icon">
-            <span class="cp-listing-card__img-initials">TA</span>
+            <span class="cp-listing-card__img-initials">AT</span>
             <span class="cp-listing-card__img-label">Image Coming Soon</span>
           </div>
         </div>
         <div class="cp-listing-card__body">
-          <span class="cp-listing-card__type">&#8962; Residential</span>
-          <h3 class="cp-listing-card__name">Tanya Awas</h3>
-          <div class="cp-listing-card__footer">
-            <span class="cp-listing-card__enquire">View Details <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-            <span class="cp-listing-card__status">Available</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="/shyama-enclave/" class="cp-listing-card cp-listing-card--linked" data-type="residential">
-        <div class="cp-listing-card__img">
-          <div class="cp-listing-card__img-border"></div>
-          <div class="cp-listing-card__img-watermark" aria-hidden="true"><svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="38" stroke="#C9A15C" stroke-width="1"/><polygon points="40,4 42,38 76,40 42,42 40,76 38,42 4,40 38,38" fill="none" stroke="#C9A15C" stroke-width="1"/><circle cx="40" cy="40" r="4" fill="#C9A15C"/></svg></div>
-          <div class="cp-listing-card__img-icon">
-            <span class="cp-listing-card__img-initials">SE</span>
-            <span class="cp-listing-card__img-label">Image Coming Soon</span>
-          </div>
-        </div>
-        <div class="cp-listing-card__body">
-          <span class="cp-listing-card__type">&#8962; Residential</span>
-          <h3 class="cp-listing-card__name">Shyama Enclave</h3>
+          <span class="cp-listing-card__type">&#9632; Plots</span>
+          <h3 class="cp-listing-card__name">Apna Town</h3>
           <div class="cp-listing-card__footer">
             <span class="cp-listing-card__enquire">View Details <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
             <span class="cp-listing-card__status">Available</span>
@@ -230,6 +233,101 @@
         </div>
       </a>
 
+      <a href="/dwarka-enclave/" class="cp-listing-card cp-listing-card--linked" data-type="plots">
+        <div class="cp-listing-card__img">
+          <div class="cp-listing-card__img-border"></div>
+          <div class="cp-listing-card__img-watermark" aria-hidden="true"><svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="38" stroke="#C9A15C" stroke-width="1"/><polygon points="40,4 42,38 76,40 42,42 40,76 38,42 4,40 38,38" fill="none" stroke="#C9A15C" stroke-width="1"/><circle cx="40" cy="40" r="4" fill="#C9A15C"/></svg></div>
+          <div class="cp-listing-card__img-icon">
+            <span class="cp-listing-card__img-initials">DE</span>
+            <span class="cp-listing-card__img-label">Image Coming Soon</span>
+          </div>
+        </div>
+        <div class="cp-listing-card__body">
+          <span class="cp-listing-card__type">&#9632; Plots</span>
+          <h3 class="cp-listing-card__name">Dwarka Enclave</h3>
+          <div class="cp-listing-card__footer">
+            <span class="cp-listing-card__enquire">View Details <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+            <span class="cp-listing-card__status">Available</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="/eldeco-trinity/" class="cp-listing-card cp-listing-card--linked" data-type="residential">
+        <div class="cp-listing-card__img">
+          <div class="cp-listing-card__img-border"></div>
+          <div class="cp-listing-card__img-watermark" aria-hidden="true"><svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="38" stroke="#C9A15C" stroke-width="1"/><polygon points="40,4 42,38 76,40 42,42 40,76 38,42 4,40 38,38" fill="none" stroke="#C9A15C" stroke-width="1"/><circle cx="40" cy="40" r="4" fill="#C9A15C"/></svg></div>
+          <div class="cp-listing-card__img-icon">
+            <span class="cp-listing-card__img-initials">ET</span>
+            <span class="cp-listing-card__img-label">Image Coming Soon</span>
+          </div>
+        </div>
+        <div class="cp-listing-card__body">
+          <span class="cp-listing-card__type">&#8962; Residential</span>
+          <h3 class="cp-listing-card__name">Eldeco Trinity</h3>
+          <div class="cp-listing-card__footer">
+            <span class="cp-listing-card__enquire">View Details <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+            <span class="cp-listing-card__status">Available</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="/evara-shades/" class="cp-listing-card cp-listing-card--linked" data-type="residential">
+        <div class="cp-listing-card__img">
+          <div class="cp-listing-card__img-border"></div>
+          <div class="cp-listing-card__img-watermark" aria-hidden="true"><svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="38" stroke="#C9A15C" stroke-width="1"/><polygon points="40,4 42,38 76,40 42,42 40,76 38,42 4,40 38,38" fill="none" stroke="#C9A15C" stroke-width="1"/><circle cx="40" cy="40" r="4" fill="#C9A15C"/></svg></div>
+          <div class="cp-listing-card__img-icon">
+            <span class="cp-listing-card__img-initials">ES</span>
+            <span class="cp-listing-card__img-label">Image Coming Soon</span>
+          </div>
+        </div>
+        <div class="cp-listing-card__body">
+          <span class="cp-listing-card__type">&#8962; Residential</span>
+          <h3 class="cp-listing-card__name">Evara Shades</h3>
+          <div class="cp-listing-card__footer">
+            <span class="cp-listing-card__enquire">View Details <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+            <span class="cp-listing-card__status">Available</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="/fb-floret-town/" class="cp-listing-card cp-listing-card--linked" data-type="residential">
+        <div class="cp-listing-card__img">
+          <div class="cp-listing-card__img-border"></div>
+          <div class="cp-listing-card__img-watermark" aria-hidden="true"><svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="38" stroke="#C9A15C" stroke-width="1"/><polygon points="40,4 42,38 76,40 42,42 40,76 38,42 4,40 38,38" fill="none" stroke="#C9A15C" stroke-width="1"/><circle cx="40" cy="40" r="4" fill="#C9A15C"/></svg></div>
+          <div class="cp-listing-card__img-icon">
+            <span class="cp-listing-card__img-initials">FB</span>
+            <span class="cp-listing-card__img-label">Image Coming Soon</span>
+          </div>
+        </div>
+        <div class="cp-listing-card__body">
+          <span class="cp-listing-card__type">&#8962; Residential</span>
+          <h3 class="cp-listing-card__name">FB Floret Town</h3>
+          <div class="cp-listing-card__footer">
+            <span class="cp-listing-card__enquire">View Details <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+            <span class="cp-listing-card__status">Available</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="/golden-enclave/" class="cp-listing-card cp-listing-card--linked" data-type="plots">
+        <div class="cp-listing-card__img">
+          <div class="cp-listing-card__img-border"></div>
+          <div class="cp-listing-card__img-watermark" aria-hidden="true"><svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="38" stroke="#C9A15C" stroke-width="1"/><polygon points="40,4 42,38 76,40 42,42 40,76 38,42 4,40 38,38" fill="none" stroke="#C9A15C" stroke-width="1"/><circle cx="40" cy="40" r="4" fill="#C9A15C"/></svg></div>
+          <div class="cp-listing-card__img-icon">
+            <span class="cp-listing-card__img-initials">GE</span>
+            <span class="cp-listing-card__img-label">Image Coming Soon</span>
+          </div>
+        </div>
+        <div class="cp-listing-card__body">
+          <span class="cp-listing-card__type">&#9744; Plots</span>
+          <h3 class="cp-listing-card__name">Golden Enclave</h3>
+          <div class="cp-listing-card__footer">
+            <span class="cp-listing-card__enquire">View Details <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+            <span class="cp-listing-card__status">Available</span>
+          </div>
+        </div>
+      </a>
+
       <a href="/grah-emperia/" class="cp-listing-card cp-listing-card--linked" data-type="residential">
         <div class="cp-listing-card__img">
           <div class="cp-listing-card__img-border"></div>
@@ -249,18 +347,56 @@
         </div>
       </a>
 
-      <a href="/prosperity-home-ii/" class="cp-listing-card cp-listing-card--linked" data-type="residential">
+      <a href="/ljk-divinity/" class="cp-listing-card cp-listing-card--linked" data-type="plots">
         <div class="cp-listing-card__img">
           <div class="cp-listing-card__img-border"></div>
           <div class="cp-listing-card__img-watermark" aria-hidden="true"><svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="38" stroke="#C9A15C" stroke-width="1"/><polygon points="40,4 42,38 76,40 42,42 40,76 38,42 4,40 38,38" fill="none" stroke="#C9A15C" stroke-width="1"/><circle cx="40" cy="40" r="4" fill="#C9A15C"/></svg></div>
           <div class="cp-listing-card__img-icon">
-            <span class="cp-listing-card__img-initials">PH</span>
+            <span class="cp-listing-card__img-initials">LD</span>
+            <span class="cp-listing-card__img-label">Image Coming Soon</span>
+          </div>
+        </div>
+        <div class="cp-listing-card__body">
+          <span class="cp-listing-card__type">&#9632; Plots</span>
+          <h3 class="cp-listing-card__name">LJK Divinity</h3>
+          <div class="cp-listing-card__footer">
+            <span class="cp-listing-card__enquire">View Details <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+            <span class="cp-listing-card__status">Available</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="/miracle-homes/" class="cp-listing-card cp-listing-card--linked" data-type="residential">
+        <div class="cp-listing-card__img">
+          <div class="cp-listing-card__img-border"></div>
+          <div class="cp-listing-card__img-watermark" aria-hidden="true"><svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="38" stroke="#C9A15C" stroke-width="1"/><polygon points="40,4 42,38 76,40 42,42 40,76 38,42 4,40 38,38" fill="none" stroke="#C9A15C" stroke-width="1"/><circle cx="40" cy="40" r="4" fill="#C9A15C"/></svg></div>
+          <div class="cp-listing-card__img-icon">
+            <span class="cp-listing-card__img-initials">MH</span>
             <span class="cp-listing-card__img-label">Image Coming Soon</span>
           </div>
         </div>
         <div class="cp-listing-card__body">
           <span class="cp-listing-card__type">&#8962; Residential</span>
-          <h3 class="cp-listing-card__name">Prosperity Home II</h3>
+          <h3 class="cp-listing-card__name">Miracle Homes</h3>
+          <div class="cp-listing-card__footer">
+            <span class="cp-listing-card__enquire">View Details <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+            <span class="cp-listing-card__status">Available</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="/nature-woods/" class="cp-listing-card cp-listing-card--linked" data-type="plots">
+        <div class="cp-listing-card__img">
+          <div class="cp-listing-card__img-border"></div>
+          <div class="cp-listing-card__img-watermark" aria-hidden="true"><svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="38" stroke="#C9A15C" stroke-width="1"/><polygon points="40,4 42,38 76,40 42,42 40,76 38,42 4,40 38,38" fill="none" stroke="#C9A15C" stroke-width="1"/><circle cx="40" cy="40" r="4" fill="#C9A15C"/></svg></div>
+          <div class="cp-listing-card__img-icon">
+            <span class="cp-listing-card__img-initials">NW</span>
+            <span class="cp-listing-card__img-label">Image Coming Soon</span>
+          </div>
+        </div>
+        <div class="cp-listing-card__body">
+          <span class="cp-listing-card__type">&#9632; Plots</span>
+          <h3 class="cp-listing-card__name">Nature Woods</h3>
           <div class="cp-listing-card__footer">
             <span class="cp-listing-card__enquire">View Details <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
             <span class="cp-listing-card__status">Available</span>
@@ -287,6 +423,82 @@
         </div>
       </a>
 
+      <a href="/paradise-town/" class="cp-listing-card cp-listing-card--linked" data-type="plots">
+        <div class="cp-listing-card__img">
+          <div class="cp-listing-card__img-border"></div>
+          <div class="cp-listing-card__img-watermark" aria-hidden="true"><svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="38" stroke="#C9A15C" stroke-width="1"/><polygon points="40,4 42,38 76,40 42,42 40,76 38,42 4,40 38,38" fill="none" stroke="#C9A15C" stroke-width="1"/><circle cx="40" cy="40" r="4" fill="#C9A15C"/></svg></div>
+          <div class="cp-listing-card__img-icon">
+            <span class="cp-listing-card__img-initials">PT</span>
+            <span class="cp-listing-card__img-label">Image Coming Soon</span>
+          </div>
+        </div>
+        <div class="cp-listing-card__body">
+          <span class="cp-listing-card__type">&#9632; Plots</span>
+          <h3 class="cp-listing-card__name">Paradise Town</h3>
+          <div class="cp-listing-card__footer">
+            <span class="cp-listing-card__enquire">View Details <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+            <span class="cp-listing-card__status">Available</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="/prosperity-home-ii/" class="cp-listing-card cp-listing-card--linked" data-type="residential">
+        <div class="cp-listing-card__img">
+          <div class="cp-listing-card__img-border"></div>
+          <div class="cp-listing-card__img-watermark" aria-hidden="true"><svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="38" stroke="#C9A15C" stroke-width="1"/><polygon points="40,4 42,38 76,40 42,42 40,76 38,42 4,40 38,38" fill="none" stroke="#C9A15C" stroke-width="1"/><circle cx="40" cy="40" r="4" fill="#C9A15C"/></svg></div>
+          <div class="cp-listing-card__img-icon">
+            <span class="cp-listing-card__img-initials">PH</span>
+            <span class="cp-listing-card__img-label">Image Coming Soon</span>
+          </div>
+        </div>
+        <div class="cp-listing-card__body">
+          <span class="cp-listing-card__type">&#8962; Residential</span>
+          <h3 class="cp-listing-card__name">Prosperity Home II</h3>
+          <div class="cp-listing-card__footer">
+            <span class="cp-listing-card__enquire">View Details <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+            <span class="cp-listing-card__status">Available</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="/shyama-enclave/" class="cp-listing-card cp-listing-card--linked" data-type="residential">
+        <div class="cp-listing-card__img">
+          <div class="cp-listing-card__img-border"></div>
+          <div class="cp-listing-card__img-watermark" aria-hidden="true"><svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="38" stroke="#C9A15C" stroke-width="1"/><polygon points="40,4 42,38 76,40 42,42 40,76 38,42 4,40 38,38" fill="none" stroke="#C9A15C" stroke-width="1"/><circle cx="40" cy="40" r="4" fill="#C9A15C"/></svg></div>
+          <div class="cp-listing-card__img-icon">
+            <span class="cp-listing-card__img-initials">SE</span>
+            <span class="cp-listing-card__img-label">Image Coming Soon</span>
+          </div>
+        </div>
+        <div class="cp-listing-card__body">
+          <span class="cp-listing-card__type">&#8962; Residential</span>
+          <h3 class="cp-listing-card__name">Shyama Enclave</h3>
+          <div class="cp-listing-card__footer">
+            <span class="cp-listing-card__enquire">View Details <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+            <span class="cp-listing-card__status">Available</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="/sky-om-city/" class="cp-listing-card cp-listing-card--linked" data-type="plots">
+        <div class="cp-listing-card__img">
+          <div class="cp-listing-card__img-border"></div>
+          <div class="cp-listing-card__img-watermark" aria-hidden="true"><svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="38" stroke="#C9A15C" stroke-width="1"/><polygon points="40,4 42,38 76,40 42,42 40,76 38,42 4,40 38,38" fill="none" stroke="#C9A15C" stroke-width="1"/><circle cx="40" cy="40" r="4" fill="#C9A15C"/></svg></div>
+          <div class="cp-listing-card__img-icon">
+            <span class="cp-listing-card__img-initials">SC</span>
+            <span class="cp-listing-card__img-label">Image Coming Soon</span>
+          </div>
+        </div>
+        <div class="cp-listing-card__body">
+          <span class="cp-listing-card__type">&#9632; Plots</span>
+          <h3 class="cp-listing-card__name">Sky Om City</h3>
+          <div class="cp-listing-card__footer">
+            <span class="cp-listing-card__enquire">View Details <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+            <span class="cp-listing-card__status">Available</span>
+          </div>
+        </div>
+      </a>
+
       <a href="/smj-suraksha-enclave/" class="cp-listing-card cp-listing-card--linked" data-type="residential">
         <div class="cp-listing-card__img">
           <div class="cp-listing-card__img-border"></div>
@@ -305,6 +517,28 @@
           </div>
         </div>
       </a>
+
+      <a href="/tanya-awas/" class="cp-listing-card cp-listing-card--linked" data-type="residential">
+        <div class="cp-listing-card__img">
+          <div class="cp-listing-card__img-border"></div>
+          <div class="cp-listing-card__img-watermark" aria-hidden="true"><svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="38" stroke="#C9A15C" stroke-width="1"/><polygon points="40,4 42,38 76,40 42,42 40,76 38,42 4,40 38,38" fill="none" stroke="#C9A15C" stroke-width="1"/><circle cx="40" cy="40" r="4" fill="#C9A15C"/></svg></div>
+          <div class="cp-listing-card__img-icon">
+            <span class="cp-listing-card__img-initials">TA</span>
+            <span class="cp-listing-card__img-label">Image Coming Soon</span>
+          </div>
+        </div>
+        <div class="cp-listing-card__body">
+          <span class="cp-listing-card__type">&#8962; Residential</span>
+          <h3 class="cp-listing-card__name">Tanya Awas</h3>
+          <div class="cp-listing-card__footer">
+            <span class="cp-listing-card__enquire">View Details <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+            <span class="cp-listing-card__status">Available</span>
+          </div>
+        </div>
+      </a>
+
+
+      <!-- ===== OTHER LISTINGS ===== -->
 
       <div class="cp-listing-card" data-type="residential">
         <div class="cp-listing-card__img">
@@ -363,25 +597,6 @@
         </div>
       </div>
 
-      <a href="/evara-shades/" class="cp-listing-card cp-listing-card--linked" data-type="residential">
-        <div class="cp-listing-card__img">
-          <div class="cp-listing-card__img-border"></div>
-          <div class="cp-listing-card__img-watermark" aria-hidden="true"><svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="38" stroke="#C9A15C" stroke-width="1"/><polygon points="40,4 42,38 76,40 42,42 40,76 38,42 4,40 38,38" fill="none" stroke="#C9A15C" stroke-width="1"/><circle cx="40" cy="40" r="4" fill="#C9A15C"/></svg></div>
-          <div class="cp-listing-card__img-icon">
-            <span class="cp-listing-card__img-initials">ES</span>
-            <span class="cp-listing-card__img-label">Image Coming Soon</span>
-          </div>
-        </div>
-        <div class="cp-listing-card__body">
-          <span class="cp-listing-card__type">&#8962; Residential</span>
-          <h3 class="cp-listing-card__name">Evara Shades</h3>
-          <div class="cp-listing-card__footer">
-            <span class="cp-listing-card__enquire">View Details <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-            <span class="cp-listing-card__status">Available</span>
-          </div>
-        </div>
-      </a>
-
       <div class="cp-listing-card" data-type="residential">
         <div class="cp-listing-card__img">
           <div class="cp-listing-card__img-border"></div>
@@ -400,25 +615,6 @@
           </div>
         </div>
       </div>
-
-      <a href="/miracle-homes/" class="cp-listing-card cp-listing-card--linked" data-type="residential">
-        <div class="cp-listing-card__img">
-          <div class="cp-listing-card__img-border"></div>
-          <div class="cp-listing-card__img-watermark" aria-hidden="true"><svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="38" stroke="#C9A15C" stroke-width="1"/><polygon points="40,4 42,38 76,40 42,42 40,76 38,42 4,40 38,38" fill="none" stroke="#C9A15C" stroke-width="1"/><circle cx="40" cy="40" r="4" fill="#C9A15C"/></svg></div>
-          <div class="cp-listing-card__img-icon">
-            <span class="cp-listing-card__img-initials">MH</span>
-            <span class="cp-listing-card__img-label">Image Coming Soon</span>
-          </div>
-        </div>
-        <div class="cp-listing-card__body">
-          <span class="cp-listing-card__type">&#8962; Residential</span>
-          <h3 class="cp-listing-card__name">Miracle Homes</h3>
-          <div class="cp-listing-card__footer">
-            <span class="cp-listing-card__enquire">View Details <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-            <span class="cp-listing-card__status">Available</span>
-          </div>
-        </div>
-      </a>
 
       <div class="cp-listing-card" data-type="residential">
         <div class="cp-listing-card__img">
@@ -534,7 +730,6 @@
         </div>
       </div>
 
-      <!-- ===== PLOTS (13) ===== -->
       <div class="cp-listing-card" data-type="plots">
         <div class="cp-listing-card__img">
           <div class="cp-listing-card__img-border"></div>
@@ -553,44 +748,6 @@
           </div>
         </div>
       </div>
-
-      <a href="/apna-town/" class="cp-listing-card cp-listing-card--linked" data-type="plots">
-        <div class="cp-listing-card__img">
-          <div class="cp-listing-card__img-border"></div>
-          <div class="cp-listing-card__img-watermark" aria-hidden="true"><svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="38" stroke="#C9A15C" stroke-width="1"/><polygon points="40,4 42,38 76,40 42,42 40,76 38,42 4,40 38,38" fill="none" stroke="#C9A15C" stroke-width="1"/><circle cx="40" cy="40" r="4" fill="#C9A15C"/></svg></div>
-          <div class="cp-listing-card__img-icon">
-            <span class="cp-listing-card__img-initials">AT</span>
-            <span class="cp-listing-card__img-label">Image Coming Soon</span>
-          </div>
-        </div>
-        <div class="cp-listing-card__body">
-          <span class="cp-listing-card__type">&#9632; Plots</span>
-          <h3 class="cp-listing-card__name">Apna Town</h3>
-          <div class="cp-listing-card__footer">
-            <span class="cp-listing-card__enquire">View Details <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-            <span class="cp-listing-card__status">Available</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="/dwarka-enclave/" class="cp-listing-card cp-listing-card--linked" data-type="plots">
-        <div class="cp-listing-card__img">
-          <div class="cp-listing-card__img-border"></div>
-          <div class="cp-listing-card__img-watermark" aria-hidden="true"><svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="38" stroke="#C9A15C" stroke-width="1"/><polygon points="40,4 42,38 76,40 42,42 40,76 38,42 4,40 38,38" fill="none" stroke="#C9A15C" stroke-width="1"/><circle cx="40" cy="40" r="4" fill="#C9A15C"/></svg></div>
-          <div class="cp-listing-card__img-icon">
-            <span class="cp-listing-card__img-initials">DE</span>
-            <span class="cp-listing-card__img-label">Image Coming Soon</span>
-          </div>
-        </div>
-        <div class="cp-listing-card__body">
-          <span class="cp-listing-card__type">&#9632; Plots</span>
-          <h3 class="cp-listing-card__name">Dwarka Enclave</h3>
-          <div class="cp-listing-card__footer">
-            <span class="cp-listing-card__enquire">View Details <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-            <span class="cp-listing-card__status">Available</span>
-          </div>
-        </div>
-      </a>
 
       <div class="cp-listing-card" data-type="plots">
         <div class="cp-listing-card__img">
@@ -629,44 +786,6 @@
           </div>
         </div>
       </div>
-
-      <a href="/nature-woods/" class="cp-listing-card cp-listing-card--linked" data-type="plots">
-        <div class="cp-listing-card__img">
-          <div class="cp-listing-card__img-border"></div>
-          <div class="cp-listing-card__img-watermark" aria-hidden="true"><svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="38" stroke="#C9A15C" stroke-width="1"/><polygon points="40,4 42,38 76,40 42,42 40,76 38,42 4,40 38,38" fill="none" stroke="#C9A15C" stroke-width="1"/><circle cx="40" cy="40" r="4" fill="#C9A15C"/></svg></div>
-          <div class="cp-listing-card__img-icon">
-            <span class="cp-listing-card__img-initials">NW</span>
-            <span class="cp-listing-card__img-label">Image Coming Soon</span>
-          </div>
-        </div>
-        <div class="cp-listing-card__body">
-          <span class="cp-listing-card__type">&#9632; Plots</span>
-          <h3 class="cp-listing-card__name">Nature Woods</h3>
-          <div class="cp-listing-card__footer">
-            <span class="cp-listing-card__enquire">View Details <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-            <span class="cp-listing-card__status">Available</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="/ljk-divinity/" class="cp-listing-card cp-listing-card--linked" data-type="plots">
-        <div class="cp-listing-card__img">
-          <div class="cp-listing-card__img-border"></div>
-          <div class="cp-listing-card__img-watermark" aria-hidden="true"><svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="38" stroke="#C9A15C" stroke-width="1"/><polygon points="40,4 42,38 76,40 42,42 40,76 38,42 4,40 38,38" fill="none" stroke="#C9A15C" stroke-width="1"/><circle cx="40" cy="40" r="4" fill="#C9A15C"/></svg></div>
-          <div class="cp-listing-card__img-icon">
-            <span class="cp-listing-card__img-initials">LD</span>
-            <span class="cp-listing-card__img-label">Image Coming Soon</span>
-          </div>
-        </div>
-        <div class="cp-listing-card__body">
-          <span class="cp-listing-card__type">&#9632; Plots</span>
-          <h3 class="cp-listing-card__name">LJK Divinity</h3>
-          <div class="cp-listing-card__footer">
-            <span class="cp-listing-card__enquire">View Details <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-            <span class="cp-listing-card__status">Available</span>
-          </div>
-        </div>
-      </a>
 
       <a href="/shyama-enclave/" class="cp-listing-card cp-listing-card--linked" data-type="plots">
         <div class="cp-listing-card__img">
@@ -744,45 +863,6 @@
         </div>
       </div>
 
-      <a href="/paradise-town/" class="cp-listing-card cp-listing-card--linked" data-type="plots">
-        <div class="cp-listing-card__img">
-          <div class="cp-listing-card__img-border"></div>
-          <div class="cp-listing-card__img-watermark" aria-hidden="true"><svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="38" stroke="#C9A15C" stroke-width="1"/><polygon points="40,4 42,38 76,40 42,42 40,76 38,42 4,40 38,38" fill="none" stroke="#C9A15C" stroke-width="1"/><circle cx="40" cy="40" r="4" fill="#C9A15C"/></svg></div>
-          <div class="cp-listing-card__img-icon">
-            <span class="cp-listing-card__img-initials">PT</span>
-            <span class="cp-listing-card__img-label">Image Coming Soon</span>
-          </div>
-        </div>
-        <div class="cp-listing-card__body">
-          <span class="cp-listing-card__type">&#9632; Plots</span>
-          <h3 class="cp-listing-card__name">Paradise Town</h3>
-          <div class="cp-listing-card__footer">
-            <span class="cp-listing-card__enquire">View Details <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-            <span class="cp-listing-card__status">Available</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="/sky-om-city/" class="cp-listing-card cp-listing-card--linked" data-type="plots">
-        <div class="cp-listing-card__img">
-          <div class="cp-listing-card__img-border"></div>
-          <div class="cp-listing-card__img-watermark" aria-hidden="true"><svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="38" stroke="#C9A15C" stroke-width="1"/><polygon points="40,4 42,38 76,40 42,42 40,76 38,42 4,40 38,38" fill="none" stroke="#C9A15C" stroke-width="1"/><circle cx="40" cy="40" r="4" fill="#C9A15C"/></svg></div>
-          <div class="cp-listing-card__img-icon">
-            <span class="cp-listing-card__img-initials">SC</span>
-            <span class="cp-listing-card__img-label">Image Coming Soon</span>
-          </div>
-        </div>
-        <div class="cp-listing-card__body">
-          <span class="cp-listing-card__type">&#9632; Plots</span>
-          <h3 class="cp-listing-card__name">Sky Om City</h3>
-          <div class="cp-listing-card__footer">
-            <span class="cp-listing-card__enquire">View Details <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-            <span class="cp-listing-card__status">Available</span>
-          </div>
-        </div>
-      </a>
-
-      <!-- ===== COMMERCIAL (6) ===== -->
       <div class="cp-listing-card" data-type="commercial">
         <div class="cp-listing-card__img">
           <div class="cp-listing-card__img-border"></div>
@@ -897,7 +977,6 @@
         </div>
       </div>
 
-      <!-- ===== DUPLEX / VILLA'S (12) ===== -->
       <a href="/fb-floret-town/" class="cp-listing-card cp-listing-card--linked" data-type="duplex">
         <div class="cp-listing-card__img">
           <div class="cp-listing-card__img-border"></div>
@@ -1125,6 +1204,7 @@
           </div>
         </div>
       </div>
+
 
     </div><!-- /grid -->
 

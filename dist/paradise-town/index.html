@@ -3,12 +3,356 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Paradise Town — Caasaa Paandora Luxury Real Estate</title>
-  <meta name="description" content="Paradise Town property listing. Located in Lucknow, Uttar Pradesh. Managed by Caasaa Paandora Luxury Real Estate."/>
+  <title>Paradise Town — Residential Plots, Sultanpur Road, Lucknow | Caasaa Paandora</title>
+  <meta name="description" content="Paradise Town by Awadh Empire Infrabuild. 100 residences across 4 acres on Sultanpur Road, Lucknow. Possession March 2026. RCC framed structure, gated community with club house and 19 amenities."/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="/assets/css/main.css"/>
+  <style>
+/* =========================================
+   PARADISE TOWN — FULL PAGE STYLES
+   ========================================= */
+
+/* ── Under Construction tag ── */
+.ctp-tag--uc {
+  background: rgba(251, 191, 36, 0.12);
+  color: #FBB924;
+  border: 1px solid rgba(251, 191, 36, 0.28);
+}
+
+/* ── Status badge ── */
+.ctp-status-badge {
+  display: inline-block;
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  padding: .2rem .6rem;
+  border-radius: 20px;
+}
+.ctp-status-badge--uc {
+  background: rgba(251, 191, 36, 0.12);
+  color: #FBB924;
+  border: 1px solid rgba(251, 191, 36, 0.28);
+}
+
+/* ── Amenities section ── */
+.ctp-amenity-subhead {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--cp-gold);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  margin: 0 0 1.5rem;
+}
+
+.ctp-amenity-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.ctp-amenity {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(201, 161, 92, 0.12);
+  border-radius: 12px;
+  padding: 1.4rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: .75rem;
+  transition: border-color .2s, background .2s;
+}
+.ctp-amenity:hover {
+  background: rgba(201, 161, 92, 0.07);
+  border-color: rgba(201, 161, 92, 0.3);
+}
+.ctp-amenity__icon {
+  width: 52px;
+  height: 52px;
+  background: rgba(201, 161, 92, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cp-gold);
+}
+.ctp-amenity__name {
+  font-size: .82rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: .02em;
+  line-height: 1.3;
+}
+
+/* ── Other facilities pills ── */
+.ctp-facility-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .65rem;
+}
+.ctp-facility-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  padding: .45rem 1rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(201, 161, 92, 0.15);
+  font-size: .8rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+  letter-spacing: .01em;
+}
+.ctp-facility-pill svg {
+  color: var(--cp-gold);
+  flex-shrink: 0;
+}
+
+/* ── Pricing grid ── */
+.ctp-pt-pricing-grid {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+.ctp-pt-price-hero {
+  background: linear-gradient(145deg, rgba(201, 161, 92, 0.12), rgba(201, 161, 92, 0.04));
+  border: 1px solid rgba(201, 161, 92, 0.25);
+  border-radius: 16px;
+  padding: 2rem 1.75rem;
+  text-align: center;
+}
+.ctp-pt-price-label {
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--cp-gold);
+  margin-bottom: .75rem;
+}
+.ctp-pt-price-val {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+.ctp-pt-price-sub {
+  font-size: .82rem;
+  color: var(--cp-white-70);
+  line-height: 1.6;
+}
+
+/* ── Specs table ── */
+.ctp-pt-specs {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.ctp-pt-specs__title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: .5rem;
+}
+.ctp-pt-specs__table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.ctp-pt-specs__table th,
+.ctp-pt-specs__table td {
+  padding: .7rem 1rem;
+  border-bottom: 1px solid rgba(255,255,255,.07);
+  font-size: .85rem;
+  text-align: left;
+}
+.ctp-pt-specs__table th {
+  color: var(--cp-gold);
+  font-weight: 600;
+  width: 40%;
+  letter-spacing: .02em;
+}
+.ctp-pt-specs__table td {
+  color: rgba(255,255,255,.8);
+}
+
+/* ── Investment banner ── */
+.ctp-pt-invest-banner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(201, 161, 92, 0.07);
+  border: 1px solid rgba(201, 161, 92, 0.2);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  flex-wrap: wrap;
+}
+.ctp-pt-invest-banner__icon {
+  width: 40px;
+  height: 40px;
+  background: rgba(201, 161, 92, 0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cp-gold);
+  flex-shrink: 0;
+}
+.ctp-pt-invest-banner__title {
+  font-size: .85rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: .2rem;
+}
+.ctp-pt-invest-banner__desc {
+  font-size: .78rem;
+  color: var(--cp-white-70);
+}
+.ctp-pt-invest-banner > a {
+  margin-left: auto;
+}
+
+/* ── Locality rating ── */
+.ctp-locality-rating {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(201, 161, 92, 0.07);
+  border: 1px solid rgba(201, 161, 92, 0.2);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-top: 1.25rem;
+}
+.ctp-locality-rating__score {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--cp-gold);
+  line-height: 1;
+  flex-shrink: 0;
+}
+.ctp-locality-rating__score span {
+  font-size: 1rem;
+  color: var(--cp-white-70);
+}
+.ctp-locality-rating__label {
+  font-size: .85rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: .15rem;
+}
+.ctp-locality-rating__sub {
+  font-size: .75rem;
+  color: var(--cp-white-70);
+}
+
+/* ── Resident reviews ── */
+.ctp-resident-reviews {
+  margin-top: 1.25rem;
+}
+.ctp-resident-reviews__title {
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--cp-gold);
+  margin-bottom: .75rem;
+}
+.ctp-resident-review-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+.ctp-review-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  padding: .35rem .85rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: .76rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* ── Nearby landmarks ── */
+.ctp-nearby-wrap {
+  padding: 0;
+}
+.ctp-nearby-title {
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--cp-gold);
+  margin-bottom: 1rem;
+}
+.ctp-nearby-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+}
+.ctp-nearby-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .65rem .9rem;
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: 8px;
+  gap: 1rem;
+}
+.ctp-nearby-item--highlight {
+  background: rgba(201, 161, 92, 0.07);
+  border-color: rgba(201, 161, 92, 0.2);
+}
+.ctp-nearby-item__name {
+  font-size: .84rem;
+  color: rgba(255,255,255,.85);
+  font-weight: 500;
+}
+.ctp-nearby-item__dist {
+  font-size: .76rem;
+  color: var(--cp-gold);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* ── Button small variant ── */
+.ctp-btn--sm {
+  padding: .4rem .9rem;
+  font-size: .78rem;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .ctp-pt-pricing-grid {
+    grid-template-columns: 1fr;
+  }
+  .ctp-pt-price-hero {
+    text-align: left;
+  }
+}
+@media (max-width: 700px) {
+  .ctp-amenity-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 440px) {
+  .ctp-amenity-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+  </style>
 </head>
 <body>
 <div class="ctp-wrap">
@@ -21,12 +365,12 @@
     <div class="ctp-sticky-nav__inner">
       <div class="ctp-sticky-nav__brand">
         <span class="ctp-sticky-nav__name">Paradise Town</span>
-        <span class="ctp-sticky-nav__price">Contact for Pricing</span>
+        <span class="ctp-sticky-nav__price">Mar 2026 &middot; Sultanpur Road</span>
       </div>
       <div class="ctp-sticky-nav__links">
         <a href="#ct-about">About</a>
+        <a href="#ct-amenities">Amenities</a>
         <a href="#ct-highlights">Highlights</a>
-        <a href="#ct-payment">Payment Plan</a>
         <a href="#ct-pricing">Pricing</a>
         <a href="#ct-gallery">Gallery</a>
         <a href="#ct-location">Location</a>
@@ -52,806 +396,587 @@
     <div class="ctp-hero__content">
       <div class="ctp-hero__tags">
         <span class="ctp-tag ctp-tag--res">&#8962; Residential</span>
-        <span class="ctp-tag ctp-tag--avail">● Available</span>
+        <span class="ctp-tag ctp-tag--uc">&#9711; Under Construction</span>
+        <span class="ctp-tag ctp-tag--avail">&#9679; Available</span>
       </div>
       <h1 class="ctp-hero__title">Paradise Town</h1>
-      <p class="ctp-hero__sub">Lucknow, Uttar Pradesh &nbsp;&middot;&nbsp; Managed by Caasaa Paandora</p>
+      <p class="ctp-hero__sub">Sultanpur Road, Lucknow &nbsp;&middot;&nbsp; Managed by Caasaa Paandora</p>
 
       <div class="ctp-hero__bsp-row">
         <div class="ctp-hero__bsp-block">
-          <span class="ctp-hero__bsp-lbl">Basic Sale Price</span>
-          <span class="ctp-hero__bsp-val" style="font-size:1rem;letter-spacing:0;">Contact<span class="ctp-hero__bsp-unit">for Pricing</span></span>
+          <span class="ctp-hero__bsp-lbl">Total Units</span>
+          <span class="ctp-hero__bsp-val">100</span>
         </div>
-        <div class="ctp-hero__divider-v" aria-hidden="true"></div>
+        <div class="ctp-hero__bsp-divider" aria-hidden="true"></div>
         <div class="ctp-hero__bsp-block">
-          <span class="ctp-hero__bsp-lbl">Plan Type</span>
-          <span class="ctp-hero__bsp-val" style="font-size:1.1rem;">TBA</span>
+          <span class="ctp-hero__bsp-lbl">Project Area</span>
+          <span class="ctp-hero__bsp-val">4 Acres</span>
         </div>
-        <div class="ctp-hero__divider-v" aria-hidden="true"></div>
+        <div class="ctp-hero__bsp-divider" aria-hidden="true"></div>
         <div class="ctp-hero__bsp-block">
           <span class="ctp-hero__bsp-lbl">Location</span>
-          <span class="ctp-hero__bsp-val" style="font-size:1.1rem;">Lucknow, UP</span>
+          <span class="ctp-hero__bsp-val">Sultanpur Rd</span>
         </div>
       </div>
 
-      <div class="ctp-hero__btns">
-        <a href="#ct-contact" class="ctp-btn-primary">
-          Enquire Now
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
-        <a href="#ct-contact" class="ctp-btn-outline">Contact Us</a>
+      <div class="ctp-hero__cta-row">
+        <a href="#ct-contact" class="ctp-btn ctp-btn--primary">Schedule a Visit</a>
+        <a href="#ct-amenities" class="ctp-btn ctp-btn--ghost">View Amenities</a>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ══════════════════════════════════════════════
-     ABOUT
+     ABOUT + PROJECT FACTS
 ══════════════════════════════════════════════ -->
 <section class="ctp-section" id="ct-about">
   <div class="cp-container">
-    <div class="ctp-section-head">
-      <span class="cp-section-label">About the Project</span>
-      <h2 class="ctp-section-title">Paradise Town</h2>
-      <div class="cp-divider" aria-hidden="true"></div>
+    <div class="ctp-section__header">
+      <p class="cp-section-label">About the Property</p>
+      <h2 class="ctp-section__title">Boutique Residential Living<br>on Sultanpur Road</h2>
     </div>
+
     <div class="ctp-about-grid">
       <div class="ctp-about-text">
-        <p>Crown Town Phase – II is a thoughtfully planned residential and plotted development by <strong>Lucknow Fields Empire Builders &amp; Developers</strong> in association with <strong>Hitashie Construction &amp; Developer</strong> — two trusted names in Lucknow's real estate landscape.</p>
-        <p>Designed for families who value space, security, and long-term appreciation, Crown Town Phase – II offers an integrated community living experience with well-laid roads, landscaped parks, and essential infrastructure already in place.</p>
-        <p>With a competitive Basic Sale Price of <strong>&#8377;3,999 per Sq. Ft.</strong> and a flexible Purchase + Construction plan, this project is structured for both end-users and discerning investors looking for solid returns in Lucknow's growing residential corridor.</p>
+        <p>Paradise Town is a thoughtfully planned boutique residential project by <strong>Awadh Empire Infrabuild</strong>, spread across <strong>4 acres</strong> on Sultanpur Road, Lucknow. Comprising <strong>100 residences</strong> across a single self-contained phase, the project offers an intimate community setting with a full suite of modern amenities.</p>
+        <p>With possession targeted for <strong>March 2026</strong>, Paradise Town is being developed with an <strong>RCC framed structure</strong> — combining the best of architecture and specifications, both inside and outside — ensuring lasting durability and refined finishing for every home.</p>
+        <p>The Sultanpur Road locality has earned a strong <strong>4.3 out of 5 resident satisfaction rating</strong> (155 reviews), reflecting the quality of everyday life here. The area recorded an impressive <strong>8.7% price appreciation last quarter</strong> and <strong>9.5% year-on-year growth</strong>, making Paradise Town a sound lifestyle and investment choice.</p>
+        <p>Residents enjoy excellent connectivity — with <strong>Amethi railway station</strong> nearby, easy public transport, well-maintained roads, and markets within walking distance. Good schools, seamless cab and auto access, and no traffic congestion add to the exceptional liveability of the area.</p>
       </div>
-      <div class="ctp-about-facts">
-        <div class="ctp-fact">
-          <span class="ctp-fact__icon" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-          </span>
-          <div>
-            <p class="ctp-fact__label">Project Type</p>
-            <p class="ctp-fact__val">Contact for Details</p>
+
+      <div class="ctp-facts">
+        <h3 class="ctp-facts__title">Project Facts</h3>
+        <dl class="ctp-facts__list">
+          <div class="ctp-facts__row">
+            <dt>Developer</dt>
+            <dd>Awadh Empire Infrabuild</dd>
           </div>
-        </div>
-        <div class="ctp-fact">
-          <span class="ctp-fact__icon" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          </span>
-          <div>
-            <p class="ctp-fact__label">Location</p>
-            <p class="ctp-fact__val">Lucknow, Uttar Pradesh</p>
+          <div class="ctp-facts__row">
+            <dt>Location</dt>
+            <dd>Sultanpur Road, Lucknow</dd>
           </div>
-        </div>
-        <div class="ctp-fact">
-          <span class="ctp-fact__icon" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          </span>
-          <div>
-            <p class="ctp-fact__label">Payment Plan</p>
-            <p class="ctp-fact__val">Contact for Details</p>
+          <div class="ctp-facts__row">
+            <dt>Project Area</dt>
+            <dd>4 Acres (16,200 Sq.m.)</dd>
           </div>
-        </div>
-        <div class="ctp-fact">
-          <span class="ctp-fact__icon" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-          </span>
-          <div>
-            <p class="ctp-fact__label">Basic Sale Price</p>
-            <p class="ctp-fact__val">Contact for Pricing</p>
+          <div class="ctp-facts__row">
+            <dt>Total Units</dt>
+            <dd>100 Residences</dd>
           </div>
-        </div>
-        <div class="ctp-fact">
-          <span class="ctp-fact__icon" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          </span>
-          <div>
-            <p class="ctp-fact__label">Possession</p>
-            <p class="ctp-fact__val">As per Construction Milestones</p>
+          <div class="ctp-facts__row">
+            <dt>Phases</dt>
+            <dd>1 Phase</dd>
           </div>
-        </div>
-        <div class="ctp-fact">
-          <span class="ctp-fact__icon" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          </span>
-          <div>
-            <p class="ctp-fact__label">Developer</p>
-            <p class="ctp-fact__val">Contact for Details</p>
+          <div class="ctp-facts__row">
+            <dt>Possession</dt>
+            <dd>March 2026</dd>
           </div>
-        </div>
+          <div class="ctp-facts__row">
+            <dt>Construction</dt>
+            <dd>RCC Framed Structure</dd>
+          </div>
+          <div class="ctp-facts__row">
+            <dt>Locality Rating</dt>
+            <dd>4.3 / 5 &#9733; (155 reviews)</dd>
+          </div>
+          <div class="ctp-facts__row">
+            <dt>Status</dt>
+            <dd><span class="ctp-status-badge ctp-status-badge--uc">Under Construction</span></dd>
+          </div>
+        </dl>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ══════════════════════════════════════════════
-     KEY HIGHLIGHTS
+     AMENITIES
 ══════════════════════════════════════════════ -->
-<section class="ctp-section ctp-section--alt" id="ct-highlights">
+<section class="ctp-section ctp-section--alt" id="ct-amenities">
   <div class="cp-container">
-    <div class="ctp-section-head">
-      <span class="cp-section-label">Why Choose This Project</span>
-      <h2 class="ctp-section-title">Key Highlights</h2>
-      <div class="cp-divider" aria-hidden="true"></div>
+    <div class="ctp-section__header">
+      <p class="cp-section-label">Amenities &amp; Facilities</p>
+      <h2 class="ctp-section__title">Designed for Modern Living</h2>
     </div>
+
+    <h3 class="ctp-amenity-subhead">Top Facilities</h3>
+    <div class="ctp-amenity-grid">
+
+      <div class="ctp-amenity">
+        <div class="ctp-amenity__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28">
+            <rect x="3" y="9" width="18" height="13" rx="2"/><path d="M9 22V12h6v10"/><path d="M2 9l10-6 10 6"/>
+          </svg>
+        </div>
+        <span class="ctp-amenity__name">Club House</span>
+      </div>
+
+      <div class="ctp-amenity">
+        <div class="ctp-amenity__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28">
+            <circle cx="12" cy="4" r="2"/><path d="M5 20c0-4 3-7 7-7s7 3 7 7"/><path d="M3 17l3-3"/><path d="M21 17l-3-3"/>
+          </svg>
+        </div>
+        <span class="ctp-amenity__name">Children's Play Area</span>
+      </div>
+
+      <div class="ctp-amenity">
+        <div class="ctp-amenity__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28">
+            <path d="M12 2C8 2 5 7 5 12c0 4 3 7 7 8 4-1 7-4 7-8 0-5-3-10-7-10z"/><path d="M12 10v4"/><path d="M8 14h8"/>
+          </svg>
+        </div>
+        <span class="ctp-amenity__name">Landscape Garden</span>
+      </div>
+
+      <div class="ctp-amenity">
+        <div class="ctp-amenity__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28">
+            <circle cx="13" cy="4" r="2"/><path d="M7.5 20l2-6 2.5 3 2-4 3 7"/><path d="M5 10c2-2 4-3 6-2"/><path d="M17 9l-3 2"/>
+          </svg>
+        </div>
+        <span class="ctp-amenity__name">Jogging Track</span>
+      </div>
+
+      <div class="ctp-amenity">
+        <div class="ctp-amenity__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28">
+            <circle cx="12" cy="12" r="9"/><path d="M12 3c0 0 4 4 0 9s0 9 0 9"/><path d="M3 12h18"/>
+          </svg>
+        </div>
+        <span class="ctp-amenity__name">Basketball Court</span>
+      </div>
+
+      <div class="ctp-amenity">
+        <div class="ctp-amenity__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28">
+            <path d="M4 9h16a2 2 0 0 1 2 2v2H2v-2a2 2 0 0 1 2-2z"/><path d="M2 13h20v2H2z"/><path d="M6 15v4"/><path d="M18 15v4"/>
+          </svg>
+        </div>
+        <span class="ctp-amenity__name">Sit Out Area</span>
+      </div>
+
+      <div class="ctp-amenity">
+        <div class="ctp-amenity__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28">
+            <rect x="2" y="8" width="20" height="9" rx="3"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/><path d="M2 12h20"/>
+          </svg>
+        </div>
+        <span class="ctp-amenity__name">Car Parking</span>
+      </div>
+
+      <div class="ctp-amenity">
+        <div class="ctp-amenity__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28">
+            <rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/><circle cx="12" cy="16" r="1.5" fill="currentColor"/>
+          </svg>
+        </div>
+        <span class="ctp-amenity__name">Gated Community</span>
+      </div>
+
+      <div class="ctp-amenity">
+        <div class="ctp-amenity__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28">
+            <path d="M4 20h16"/><path d="M4 16h16"/><path d="M6 16V8"/><path d="M18 16V8"/><path d="M4 8h16"/>
+          </svg>
+        </div>
+        <span class="ctp-amenity__name">Paved Compound</span>
+      </div>
+
+    </div>
+
+    <div class="cp-divider" style="margin:2.5rem 0;"></div>
+
+    <h3 class="ctp-amenity-subhead">Other Facilities</h3>
+    <div class="ctp-facility-pills">
+      <span class="ctp-facility-pill">
+        <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="2 8 6 12 14 4"/></svg>
+        Internal Street Lights
+      </span>
+      <span class="ctp-facility-pill">
+        <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="2 8 6 12 14 4"/></svg>
+        Vastu Compliant
+      </span>
+      <span class="ctp-facility-pill">
+        <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="2 8 6 12 14 4"/></svg>
+        Well-Maintained Internal Roads
+      </span>
+      <span class="ctp-facility-pill">
+        <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="2 8 6 12 14 4"/></svg>
+        CCTV Camera Security
+      </span>
+      <span class="ctp-facility-pill">
+        <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="2 8 6 12 14 4"/></svg>
+        24x7 Security
+      </span>
+      <span class="ctp-facility-pill">
+        <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="2 8 6 12 14 4"/></svg>
+        Entrance Lobby
+      </span>
+      <span class="ctp-facility-pill">
+        <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="2 8 6 12 14 4"/></svg>
+        Maintenance Staff
+      </span>
+      <span class="ctp-facility-pill">
+        <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="2 8 6 12 14 4"/></svg>
+        Sewage Treatment Plant
+      </span>
+      <span class="ctp-facility-pill">
+        <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="2 8 6 12 14 4"/></svg>
+        24/7 Water Supply
+      </span>
+      <span class="ctp-facility-pill">
+        <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="2 8 6 12 14 4"/></svg>
+        Rain Water Harvesting
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     HIGHLIGHTS
+══════════════════════════════════════════════ -->
+<section class="ctp-section" id="ct-highlights">
+  <div class="cp-container">
+    <div class="ctp-section__header">
+      <p class="cp-section-label">Why Choose Paradise Town</p>
+      <h2 class="ctp-section__title">Eight Reasons to Call This Home</h2>
+    </div>
+
     <div class="ctp-highlights-grid">
-      <div class="ctp-highlight">
-        <div class="ctp-highlight__icon" aria-hidden="true">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
+
+      <div class="ctp-highlight-card">
+        <div class="ctp-highlight-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="26" height="26">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/>
+          </svg>
         </div>
-        <h3 class="ctp-highlight__title">Prime Location</h3>
-        <p class="ctp-highlight__desc">Strategically located in Lucknow with excellent connectivity to major roads, schools, hospitals, and commercial hubs.</p>
+        <h3 class="ctp-highlight-card__title">Prime Sultanpur Road Location</h3>
+        <p class="ctp-highlight-card__desc">Locality rated 4.3/5 by residents with 8.7% price appreciation last quarter and 9.5% YoY growth — a proven corridor of value.</p>
       </div>
-      <div class="ctp-highlight">
-        <div class="ctp-highlight__icon" aria-hidden="true">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+
+      <div class="ctp-highlight-card">
+        <div class="ctp-highlight-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="26" height="26">
+            <rect x="3" y="9" width="18" height="13" rx="2"/><path d="M9 22V12h6v10"/><path d="M2 9l10-6 10 6"/>
+          </svg>
         </div>
-        <h3 class="ctp-highlight__title">Gated Community</h3>
-        <p class="ctp-highlight__desc">Secure, fully gated township with 24/7 surveillance and controlled access for residents and guests.</p>
+        <h3 class="ctp-highlight-card__title">Club House &amp; Recreation</h3>
+        <p class="ctp-highlight-card__desc">A full-featured clubhouse anchors the community, complemented by a jogging track, basketball court, and dedicated children's play area.</p>
       </div>
-      <div class="ctp-highlight">
-        <div class="ctp-highlight__icon" aria-hidden="true">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+
+      <div class="ctp-highlight-card">
+        <div class="ctp-highlight-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="26" height="26">
+            <rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/><path d="M9 17h6"/>
+          </svg>
         </div>
-        <h3 class="ctp-highlight__title">Park-Facing Options</h3>
-        <p class="ctp-highlight__desc">Lush landscaped parks within the community — choose park-facing units for a serene, green outlook every day.</p>
+        <h3 class="ctp-highlight-card__title">Secure Gated Community</h3>
+        <p class="ctp-highlight-card__desc">24x7 security personnel, CCTV surveillance, and a controlled entrance lobby ensure safety and peace of mind around the clock.</p>
       </div>
-      <div class="ctp-highlight">
-        <div class="ctp-highlight__icon" aria-hidden="true">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+
+      <div class="ctp-highlight-card">
+        <div class="ctp-highlight-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="26" height="26">
+            <path d="M3 12h18M3 6h18M3 18h18"/>
+          </svg>
         </div>
-        <h3 class="ctp-highlight__title">Flexible P+C Plan</h3>
-        <p class="ctp-highlight__desc">A staged Purchase + Construction payment plan so you pay as the project progresses — easy on the pocket.</p>
+        <h3 class="ctp-highlight-card__title">Boutique Scale — 100 Homes</h3>
+        <p class="ctp-highlight-card__desc">Only 100 residences across 4 acres in a single integrated phase — offering the privacy and cohesion of a true neighbourhood community.</p>
       </div>
-      <div class="ctp-highlight">
-        <div class="ctp-highlight__icon" aria-hidden="true">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+
+      <div class="ctp-highlight-card">
+        <div class="ctp-highlight-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="26" height="26">
+            <rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/>
+          </svg>
         </div>
-        <h3 class="ctp-highlight__title">Plot Registry</h3>
-        <p class="ctp-highlight__desc">Plot registry within 45 days of booking, giving you legal ownership security from day one.</p>
+        <h3 class="ctp-highlight-card__title">Possession March 2026</h3>
+        <p class="ctp-highlight-card__desc">Under active construction with a clear timeline. RCC framed structure being built to the best architectural and finishing standards.</p>
       </div>
-      <div class="ctp-highlight">
-        <div class="ctp-highlight__icon" aria-hidden="true">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+
+      <div class="ctp-highlight-card">
+        <div class="ctp-highlight-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="26" height="26">
+            <path d="M12 2C8 2 5 7 5 12c0 4 3 7 7 8 4-1 7-4 7-8 0-5-3-10-7-10z"/><path d="M9 12h6M12 9v6"/>
+          </svg>
         </div>
-        <h3 class="ctp-highlight__title">Ready Infrastructure</h3>
-        <p class="ctp-highlight__desc">Wide internal roads, drainage, electrification, and civic amenities developed before possession.</p>
+        <h3 class="ctp-highlight-card__title">Green &amp; Sustainable</h3>
+        <p class="ctp-highlight-card__desc">Landscape garden, rainwater harvesting, sewage treatment plant, and paved compound — sustainability built into the community's DNA.</p>
       </div>
-      <div class="ctp-highlight">
-        <div class="ctp-highlight__icon" aria-hidden="true">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+
+      <div class="ctp-highlight-card">
+        <div class="ctp-highlight-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="26" height="26">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+          </svg>
         </div>
-        <h3 class="ctp-highlight__title">Club Membership</h3>
-        <p class="ctp-highlight__desc">Exclusive club membership included — lifestyle amenities, community spaces, and recreational facilities.</p>
+        <h3 class="ctp-highlight-card__title">Vastu Compliant Design</h3>
+        <p class="ctp-highlight-card__desc">All residences planned with Vastu principles at their core, harmonising space, light, and energy for well-being and positive living.</p>
       </div>
-      <div class="ctp-highlight">
-        <div class="ctp-highlight__icon" aria-hidden="true">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+
+      <div class="ctp-highlight-card">
+        <div class="ctp-highlight-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="26" height="26">
+            <path d="M3 12h4l3-9 4 18 3-9h4"/>
+          </svg>
         </div>
-        <h3 class="ctp-highlight__title">Strong ROI Potential</h3>
-        <p class="ctp-highlight__desc">Competitively priced at &#8377;3,999/Sq. Ft. in a high-growth corridor — excellent capital appreciation potential.</p>
+        <h3 class="ctp-highlight-card__title">Exceptional Connectivity</h3>
+        <p class="ctp-highlight-card__desc">Amethi railway station nearby, good public transport, markets within walking distance, good schools, and easy cab and auto availability.</p>
       </div>
+
     </div>
   </div>
 </section>
 
 <!-- ══════════════════════════════════════════════
-     PAYMENT PLAN
-══════════════════════════════════════════════ -->
-<section class="ctp-section" id="ct-payment">
-  <div class="cp-container">
-    <div class="ctp-section-head">
-      <span class="cp-section-label">How You Pay</span>
-      <h2 class="ctp-section-title">Purchase + Construction Plan (P+C)</h2>
-      <div class="cp-divider" aria-hidden="true"></div>
-      <p class="ctp-section-desc">Pay in stages as construction progresses — structured to keep your investment aligned with milestones on the ground.</p>
-    </div>
-
-    <div class="ctp-payment-timeline">
-      <div class="ctp-milestone">
-        <div class="ctp-milestone__num">1</div>
-        <div class="ctp-milestone__line" aria-hidden="true"></div>
-        <div class="ctp-milestone__card">
-          <p class="ctp-milestone__stage">At the time of Booking</p>
-          <p class="ctp-milestone__amt">10% of BSP</p>
-        </div>
-      </div>
-      <div class="ctp-milestone">
-        <div class="ctp-milestone__num">2</div>
-        <div class="ctp-milestone__line" aria-hidden="true"></div>
-        <div class="ctp-milestone__card">
-          <p class="ctp-milestone__stage">Plot Registry within 45 days of Booking</p>
-          <p class="ctp-milestone__amt">3,000 Sq. ft.</p>
-          <p class="ctp-milestone__note">Legal ownership secured early</p>
-        </div>
-      </div>
-      <div class="ctp-milestone">
-        <div class="ctp-milestone__num">3</div>
-        <div class="ctp-milestone__line" aria-hidden="true"></div>
-        <div class="ctp-milestone__card">
-          <p class="ctp-milestone__stage">At Starting of Plinth Beam</p>
-          <p class="ctp-milestone__amt">25% of BSP</p>
-        </div>
-      </div>
-      <div class="ctp-milestone">
-        <div class="ctp-milestone__num">4</div>
-        <div class="ctp-milestone__line" aria-hidden="true"></div>
-        <div class="ctp-milestone__card">
-          <p class="ctp-milestone__stage">On Casting of Ground Floor Slab</p>
-          <p class="ctp-milestone__amt">25% of BSP</p>
-        </div>
-      </div>
-      <div class="ctp-milestone">
-        <div class="ctp-milestone__num">5</div>
-        <div class="ctp-milestone__line" aria-hidden="true"></div>
-        <div class="ctp-milestone__card">
-          <p class="ctp-milestone__stage">On Casting of First Floor Slab</p>
-          <p class="ctp-milestone__amt">25% of BSP</p>
-        </div>
-      </div>
-      <div class="ctp-milestone">
-        <div class="ctp-milestone__num">6</div>
-        <div class="ctp-milestone__line" aria-hidden="true"></div>
-        <div class="ctp-milestone__card">
-          <p class="ctp-milestone__stage">On Start of Plaster</p>
-          <p class="ctp-milestone__amt">15% of BSP</p>
-        </div>
-      </div>
-      <div class="ctp-milestone ctp-milestone--last">
-        <div class="ctp-milestone__num">7</div>
-        <div class="ctp-milestone__line" aria-hidden="true"></div>
-        <div class="ctp-milestone__card">
-          <p class="ctp-milestone__stage">At the time of Possession</p>
-          <p class="ctp-milestone__amt">10% of BSP</p>
-          <p class="ctp-milestone__note">+ 100% of other charges<br>+ 100% of extra work charges (if any)</p>
-        </div>
-      </div>
-    </div>
-
-    <p class="ctp-disclaimer">* Construction / Development stages may be called for payment in any sequence depending on work undertaken by the developer, irrespective of the sequence listed above.</p>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════════
-     PRICING & PLC
+     PRICING
 ══════════════════════════════════════════════ -->
 <section class="ctp-section ctp-section--alt" id="ct-pricing">
   <div class="cp-container">
-    <div class="ctp-section-head">
-      <span class="cp-section-label">Pricing Details</span>
-      <h2 class="ctp-section-title">Pricing &amp; Location Charges</h2>
-      <div class="cp-divider" aria-hidden="true"></div>
+    <div class="ctp-section__header">
+      <p class="cp-section-label">Pricing</p>
+      <h2 class="ctp-section__title">Transparent Pricing, No Hidden Costs</h2>
     </div>
-    <div class="ctp-pricing-grid">
 
-      <!-- BSP Card -->
-      <div class="ctp-price-card ctp-price-card--main">
-        <p class="ctp-price-card__label">Basic Sale Price (BSP)</p>
-        <p class="ctp-price-card__val" style="font-size:1.8rem;letter-spacing:0;">Contact Us</p>
-        <p class="ctp-price-card__unit">for pricing details</p>
-        <a href="#ct-contact" class="ctp-btn-primary" style="margin-top:1.5rem;display:inline-flex;width:100%;justify-content:center;">
-          Book Now
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
+    <div class="ctp-pt-pricing-grid">
+      <div class="ctp-pt-price-hero">
+        <p class="ctp-pt-price-label">Base Sale Price</p>
+        <p class="ctp-pt-price-val">Contact for Pricing</p>
+        <p class="ctp-pt-price-sub">Pricing details on request. Our advisors are available to walk you through the current rate sheet and available units.</p>
+        <a href="#ct-contact" class="ctp-btn ctp-btn--primary" style="margin-top:1.5rem;display:inline-block;">Request Price Sheet</a>
       </div>
 
-      <!-- PLC Table -->
-      <div class="ctp-plc-card">
-        <h3 class="ctp-plc-card__title">Preferential Location Charges (PLC)</h3>
-        <table class="ctp-table">
+      <div class="ctp-pt-specs">
+        <h3 class="ctp-pt-specs__title">Project Overview</h3>
+        <table class="ctp-pt-specs__table">
           <tbody>
             <tr>
-              <td>Park Facing</td>
-              <td class="ctp-table__amt">10% of BSP</td>
+              <th>Developer</th>
+              <td>Awadh Empire Infrabuild</td>
             </tr>
             <tr>
-              <td>Corner Units</td>
-              <td class="ctp-table__amt">10% of BSP</td>
+              <th>Location</th>
+              <td>Sultanpur Road, Lucknow</td>
             </tr>
             <tr>
-              <td>Park Facing + Corner Units</td>
-              <td class="ctp-table__amt">15% of BSP</td>
+              <th>Project Area</th>
+              <td>4 Acres</td>
             </tr>
             <tr>
-              <td>Club Membership Fees <em>(One-time)</em></td>
-              <td class="ctp-table__amt">&#8377;1,00,000</td>
+              <th>Total Units</th>
+              <td>100 Residences</td>
             </tr>
             <tr>
-              <td>External Development Charges — EDC <em>(One-time)</em></td>
-              <td class="ctp-table__amt">&#8377;50,000</td>
+              <th>Possession</th>
+              <td>March 2026</td>
             </tr>
             <tr>
-              <td>External Electrification Charges — EEC <em>(One-time)</em></td>
-              <td class="ctp-table__amt">&#8377;50,000</td>
+              <th>Structure</th>
+              <td>RCC Framed</td>
             </tr>
           </tbody>
         </table>
-        <p class="ctp-note">GST, stamp duty, registration charges &amp; all government levies payable extra by the purchaser.</p>
+        <div class="ctp-pt-invest-banner">
+          <div class="ctp-pt-invest-banner__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22">
+              <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/>
+            </svg>
+          </div>
+          <div>
+            <p class="ctp-pt-invest-banner__title">Strong Investment Outlook</p>
+            <p class="ctp-pt-invest-banner__desc">8.7% price appreciation last quarter &nbsp;&middot;&nbsp; 9.5% YoY growth on Sultanpur Road</p>
+          </div>
+          <a href="#ct-contact" class="ctp-btn ctp-btn--ghost ctp-btn--sm">Enquire Now</a>
+        </div>
       </div>
-
     </div>
-
-    <!-- Important Notes -->
-    <div class="ctp-notes-wrap">
-      <h3 class="ctp-notes-title">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-        Important Notes
-      </h3>
-      <ol class="ctp-notes-list">
-        <li>Price list is for reference only and may be revised at the sole discretion of the Promoter/Developer without prior notice.</li>
-        <li>The price of the unit will remain firm once booked.</li>
-        <li>All payments shall be made via Cheque/DD in favour of <strong>"Developer Name — Contact Us for Details"</strong> — Collection Account for Crown Town Phase–II, payable at par at Lucknow.</li>
-        <li>Drawings are conceptual. Area and dimension may vary within permissible limits and will be adjusted before execution of the sale deed.</li>
-        <li>Any additional area/construction/facilities provided in addition to those mentioned will be chargeable extra.</li>
-      </ol>
-    </div>
-
   </div>
 </section>
 
 <!-- ══════════════════════════════════════════════
      GALLERY
 ══════════════════════════════════════════════ -->
-<section class="ctp-section ctp-section--alt" id="ct-gallery">
+<section class="ctp-section" id="ct-gallery">
   <div class="cp-container">
-    <div class="ctp-section-head">
-      <span class="cp-section-label">Project Gallery</span>
-      <h2 class="ctp-section-title">See It for Yourself</h2>
-      <div class="cp-divider" aria-hidden="true"></div>
+    <div class="ctp-section__header">
+      <p class="cp-section-label">Gallery</p>
+      <h2 class="ctp-section__title">See Paradise Town</h2>
     </div>
 
     <div class="ctp-gallery-grid">
       <div class="ctp-gallery-item ctp-gallery-item--main">
         <div class="ctp-gallery-placeholder">
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-          <span>Image Coming Soon</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" width="36" height="36" opacity=".4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <span>Project Overview</span>
         </div>
       </div>
       <div class="ctp-gallery-item">
         <div class="ctp-gallery-placeholder">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-          <span>Image Coming Soon</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" width="36" height="36" opacity=".4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <span>Club House</span>
         </div>
       </div>
       <div class="ctp-gallery-item">
         <div class="ctp-gallery-placeholder">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-          <span>Image Coming Soon</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" width="36" height="36" opacity=".4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <span>Landscape Garden</span>
         </div>
       </div>
-    </div>
-
-    <div class="ctp-gallery-footer">
-      <button class="ctp-btn-outline ctp-gallery-more-btn" onclick="this.closest('section').querySelector('.ctp-gallery-hint').style.display='block'; this.style.display='none';">
-        View More
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </button>
-      <p class="ctp-gallery-hint" style="display:none;">More images will be available soon. <a href="#ct-contact" style="color:var(--cp-gold);">Contact us</a> for the full brochure.</p>
+      <div class="ctp-gallery-item">
+        <div class="ctp-gallery-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" width="36" height="36" opacity=".4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <span>Community View</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ══════════════════════════════════════════════
-     LOCATION / MAP
+     LOCATION
 ══════════════════════════════════════════════ -->
-<section class="ctp-section" id="ct-location">
+<section class="ctp-section ctp-section--alt" id="ct-location">
   <div class="cp-container">
-    <div class="ctp-section-head">
-      <span class="cp-section-label">Where We Are</span>
-      <h2 class="ctp-section-title">Location</h2>
-      <div class="cp-divider" aria-hidden="true"></div>
+    <div class="ctp-section__header">
+      <p class="cp-section-label">Location &amp; Connectivity</p>
+      <h2 class="ctp-section__title">Sultanpur Road, Lucknow</h2>
     </div>
+
     <div class="ctp-location-grid">
-      <div class="ctp-location-details">
-        <div class="ctp-location-item">
-          <div class="ctp-location-item__icon" aria-hidden="true">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          </div>
-          <div>
-            <p class="ctp-location-item__label">Project Address</p>
-            <p class="ctp-location-item__val">Paradise Town,<br>Lucknow, Uttar Pradesh</p>
-          </div>
-        </div>
-        <div class="ctp-location-item">
-          <div class="ctp-location-item__icon" aria-hidden="true">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-          </div>
-          <div>
-            <p class="ctp-location-item__label">Developer Office</p>
-            <p class="ctp-location-item__val">Lucknow Fields Empire Pvt. Ltd.,<br>Lucknow, Uttar Pradesh</p>
+      <div class="ctp-location-left">
+
+        <!-- Map placeholder -->
+        <div>
+          <div class="ctp-map-placeholder" aria-label="View on Google Maps">
+            <div class="ctp-map-placeholder__inner">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" opacity=".5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+              <p style="margin:.75rem 0 .25rem;font-size:.85rem;color:var(--cp-white-70);">View on Google Maps</p>
+              <a href="https://maps.google.com/?q=Sultanpur+Road+Lucknow" target="_blank" rel="noopener" class="ctp-btn ctp-btn--ghost ctp-btn--sm" style="margin-top:.5rem;">Open Map</a>
+              <span style="display:block;font-size:.7rem;color:var(--cp-white-30);margin-top:1rem;">Replace this block with an embedded map</span>
+            </div>
           </div>
         </div>
-        <div class="ctp-location-item">
-          <div class="ctp-location-item__icon" aria-hidden="true">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          </div>
+
+        <!-- Locality rating -->
+        <div class="ctp-locality-rating">
+          <div class="ctp-locality-rating__score">4.3<span>/5</span></div>
           <div>
-            <p class="ctp-location-item__label">Site Visit Hours</p>
-            <p class="ctp-location-item__val">Monday – Saturday<br>10:00 AM – 6:00 PM</p>
+            <p class="ctp-locality-rating__label">Locality Rating</p>
+            <p class="ctp-locality-rating__sub">Based on 155 resident reviews</p>
           </div>
         </div>
-        <a href="#ct-contact" class="ctp-btn-outline" style="margin-top:1rem;display:inline-flex;">Schedule a Site Visit</a>
+
+        <!-- Resident reviews -->
+        <div class="ctp-resident-reviews">
+          <p class="ctp-resident-reviews__title">What Residents Say</p>
+          <div class="ctp-resident-review-pills">
+            <span class="ctp-review-pill">&#10003; Good Public Transport</span>
+            <span class="ctp-review-pill">&#10003; Good Schools Nearby</span>
+            <span class="ctp-review-pill">&#10003; Easy Cab &amp; Auto</span>
+            <span class="ctp-review-pill">&#10003; Well-maintained Roads</span>
+            <span class="ctp-review-pill">&#10003; No Traffic Jam</span>
+            <span class="ctp-review-pill">&#10003; Markets at Walkable Distance</span>
+          </div>
+        </div>
       </div>
-      <!-- MAP PLACEHOLDER — replace with Google Maps embed later -->
-      <div class="ctp-map-placeholder" aria-label="Map coming soon">
-        <div class="ctp-map-placeholder__inner">
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#C9A15C" stroke-width="1.5" opacity="0.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          <p>Map will be embedded here</p>
-          <span>Replace this block with your Google Maps iframe</span>
-        </div>
+
+      <div class="ctp-nearby-wrap">
+        <p class="ctp-nearby-title">Nearby Landmarks</p>
+        <ul class="ctp-nearby-list" role="list">
+          <li class="ctp-nearby-item ctp-nearby-item--highlight">
+            <span class="ctp-nearby-item__name">Amethi Railway Station</span>
+            <span class="ctp-nearby-item__dist">Nearby</span>
+          </li>
+          <li class="ctp-nearby-item">
+            <span class="ctp-nearby-item__name">Sultanpur Road Main Corridor</span>
+            <span class="ctp-nearby-item__dist">On Road</span>
+          </li>
+          <li class="ctp-nearby-item">
+            <span class="ctp-nearby-item__name">Local Schools &amp; Colleges</span>
+            <span class="ctp-nearby-item__dist">Close by</span>
+          </li>
+          <li class="ctp-nearby-item">
+            <span class="ctp-nearby-item__name">Daily Markets</span>
+            <span class="ctp-nearby-item__dist">Walking Distance</span>
+          </li>
+          <li class="ctp-nearby-item">
+            <span class="ctp-nearby-item__name">Public Transport Stops</span>
+            <span class="ctp-nearby-item__dist">Accessible</span>
+          </li>
+          <li class="ctp-nearby-item">
+            <span class="ctp-nearby-item__name">Auto &amp; Cab Stand</span>
+            <span class="ctp-nearby-item__dist">Easy Access</span>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ══════════════════════════════════════════════
-     CONTACT / ENQUIRY FORM
+     CONTACT / ENQUIRY
 ══════════════════════════════════════════════ -->
 <section class="ctp-section ctp-section--dark" id="ct-contact">
   <div class="cp-container">
     <div class="ctp-contact-grid">
-
-      <!-- Left: Info -->
-      <div class="ctp-contact-info">
-        <span class="cp-section-label">Get in Touch</span>
-        <h2 class="ctp-section-title">Enquire About This Property</h2>
-        <div class="cp-divider" aria-hidden="true"></div>
-        <p style="color:var(--cp-white-70);font-size:0.9rem;line-height:1.8;margin-bottom:2rem;">Fill in the form and our team will reach out within 24 hours with pricing details, floor plans, and to schedule a site visit at your convenience.</p>
-
-        <div class="ctp-contact-item">
-          <div class="ctp-contact-item__icon">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 11.9 19.79 19.79 0 0 1 1.61 3.27 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.5 16z"/></svg>
-          </div>
-          <div>
-            <p class="ctp-contact-item__label">Phone</p>
-            <p class="ctp-contact-item__val">+91 1800 000 000</p>
-          </div>
-        </div>
-        <div class="ctp-contact-item">
-          <div class="ctp-contact-item__icon">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          </div>
-          <div>
-            <p class="ctp-contact-item__label">Email</p>
-            <p class="ctp-contact-item__val">info@caasaapaandora.com</p>
-          </div>
-        </div>
-        <div class="ctp-contact-item">
-          <div class="ctp-contact-item__icon">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          </div>
-          <div>
-            <p class="ctp-contact-item__label">Office</p>
-            <p class="ctp-contact-item__val">Tower Plaza, Sector 62, Noida — 201309</p>
-          </div>
-        </div>
+      <div class="ctp-contact-copy">
+        <p class="cp-section-label">Get in Touch</p>
+        <h2 class="ctp-contact-copy__title">Interested in<br>Paradise Town?</h2>
+        <p class="ctp-contact-copy__sub">Our property advisors will share the latest pricing, availability, and help schedule a site visit at your convenience.</p>
+        <ul class="ctp-contact-copy__bullets">
+          <li>Current rate sheet and available units</li>
+          <li>Guided site visit arrangement</li>
+          <li>Finance and home loan assistance</li>
+          <li>Documentation and booking support</li>
+        </ul>
       </div>
 
-      <!-- Right: Form -->
-      <div class="ctp-form-card">
-        <form class="ctp-form" id="ctp-enquiry-form" novalidate>
-          <div class="ctp-form__row">
-            <div class="ctp-form__group">
-              <label class="ctp-form__label" for="ctp-name">Full Name <span aria-hidden="true">*</span></label>
-              <input class="ctp-form__input" type="text" id="ctp-name" name="name" placeholder="Your full name" required autocomplete="name">
-            </div>
-            <div class="ctp-form__group">
-              <label class="ctp-form__label" for="ctp-phone">Phone Number <span aria-hidden="true">*</span></label>
-              <input class="ctp-form__input" type="tel" id="ctp-phone" name="phone" placeholder="+91 00000 00000" required autocomplete="tel">
-            </div>
-          </div>
-          <div class="ctp-form__group">
-            <label class="ctp-form__label" for="ctp-email">Email Address <span aria-hidden="true">*</span></label>
-            <input class="ctp-form__input" type="email" id="ctp-email" name="email" placeholder="you@example.com" required autocomplete="email">
-          </div>
-          <div class="ctp-form__group">
-            <label class="ctp-form__label" for="ctp-property">Interested Property</label>
-            <select class="ctp-form__input ctp-form__select" id="ctp-property" name="property">
-              <option value="" disabled selected>Select a property</option>
-              <optgroup label="— Residential —">
-                <option value="Crown Town Phase II" selected>Crown Town Phase – II</option>
-                <option value="FB Floret Town">FB Floret Town</option>
-                <option value="Tanya Awas">Tanya Awas</option>
-                <option value="Shyama Enclave">Shyama Enclave</option>
-                <option value="Grah Emperia">Grah Emperia</option>
-                <option value="Prosperity Home II">Prosperity Home – II</option>
-                <option value="Oberai Villa">Oberai Villa</option>
-                <option value="Suraksha Enclave">Suraksha Enclave</option>
-                <option value="Spring Garden II">Spring Garden – II</option>
-                <option value="Spring Greens">Spring Greens</option>
-                <option value="Eiffle Vavasha">Eiffle Vavasha</option>
-                <option value="Evara Shades">Evara Shades</option>
-                <option value="ORO Princely Estate">ORO Princely Estate</option>
-                <option value="Miracle Home">Miracle Home</option>
-                <option value="Urbanec Garden">Urbanec Garden</option>
-                <option value="Urbanec Sky Mansion">Urbanec Sky Mansion</option>
-                <option value="Rishita Mulberry">Rishita Mulberry</option>
-                <option value="Sahu Pearl">Sahu Pearl</option>
-                <option value="Unimax Bahraich">Unimax Bahraich</option>
-                <option value="Jashn Elevate">Jashn Elevate</option>
-              </optgroup>
-              <optgroup label="— Plots —">
-                <option value="Apna Tower">Apna Tower</option>
-                <option value="Dwarka Enclave">Dwarka Enclave</option>
-                <option value="Golden Town">Golden Town</option>
-                <option value="Golden City">Golden City</option>
-                <option value="Nature Woods">Nature Woods</option>
-                <option value="LJK Dignity">LJK Dignity</option>
-                <option value="Kaamini Enclave">Kaamini Enclave</option>
-                <option value="Shri Raj Infra">Shri Raj Infra</option>
-                <option value="Okus Sakoon">Okus Sakoon</option>
-                <option value="Paradise Town">Paradise Town</option>
-                <option value="Sky Om City">Sky Om City</option>
-              </optgroup>
-              <optgroup label="— Commercial —">
-                <option value="Migsun Lucknow Central">Migsun – Lucknow Central</option>
-                <option value="EBC Ekana Business Centre">EBC – Ekana Business Centre</option>
-                <option value="Summit Twin Tower">Summit Twin Tower</option>
-                <option value="Omaxe Vibhutikhand">Omaxe Vibhutikhand</option>
-                <option value="Omaxe Airport Amausi">Omaxe Airport (Amausi)</option>
-                <option value="Joystreet">Joystreet</option>
-              </optgroup>
-              <optgroup label="— Duplex &amp; Villa —">
-                <option value="Tanya Enclave">Tanya Enclave</option>
-                <option value="Oberoi Villa">Oberoi Villa</option>
-                <option value="Spring Garden II Duplex">Spring Garden – II (Duplex)</option>
-              </optgroup>
-            </select>
-          </div>
-          <div class="ctp-form__group">
-            <label class="ctp-form__label" for="ctp-message">Message <span style="color:var(--cp-white-30);font-weight:400;">(Optional)</span></label>
-            <textarea class="ctp-form__input ctp-form__textarea" id="ctp-message" name="message" placeholder="Tell us about your requirements — plot size preference, budget, timeline, or any questions..." rows="4"></textarea>
-          </div>
-          <button type="submit" class="ctp-form__submit">
-            <span class="ctp-form__submit-text">Send Enquiry</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </button>
-          <p class="ctp-form__privacy">Your details are safe with us. We do not share your information with third parties.</p>
-        </form>
-        <div class="ctp-form__success" id="ctp-form-success" hidden>
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#9AE6B4" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/></svg>
-          <h3>Enquiry Sent!</h3>
-          <p>Thank you. Our team will contact you within 24 hours.</p>
+      <form class="ctp-contact-form" method="post" action="/contact">
+        <div class="ctp-form-row">
+          <label class="ctp-form-label" for="cf-name-pt">Full Name</label>
+          <input class="ctp-form-input" type="text" id="cf-name-pt" name="name" placeholder="Your name" required/>
         </div>
-      </div>
-
+        <div class="ctp-form-row">
+          <label class="ctp-form-label" for="cf-phone-pt">Phone Number</label>
+          <input class="ctp-form-input" type="tel" id="cf-phone-pt" name="phone" placeholder="+91 98XXX XXXXX" required/>
+        </div>
+        <div class="ctp-form-row">
+          <label class="ctp-form-label" for="cf-property-pt">Property of Interest</label>
+          <select class="ctp-form-input ctp-form-select" id="cf-property-pt" name="property">
+            <optgroup label="Residential">
+              <option value="Crown Town Phase I">Crown Town Phase I</option>
+              <option value="Crown Town Phase II">Crown Town Phase II</option>
+              <option value="Oberoi Villas">Oberoi Villas</option>
+            </optgroup>
+            <optgroup label="Duplex &amp; Villa">
+              <option value="LJK Divinity">LJK Divinity</option>
+              <option value="Milestone 7">Milestone 7</option>
+            </optgroup>
+            <optgroup label="Plots">
+              <option value="Paradise Town" selected>Paradise Town</option>
+              <option value="Nature Woods">Nature Woods</option>
+              <option value="Apna Town">Apna Town</option>
+              <option value="Eldeco Trinity">Eldeco Trinity</option>
+              <option value="Dwarka Enclave">Dwarka Enclave</option>
+            </optgroup>
+            <optgroup label="Commercial">
+              <option value="Other">Other / Not Sure</option>
+            </optgroup>
+          </select>
+        </div>
+        <div class="ctp-form-row">
+          <label class="ctp-form-label" for="cf-msg-pt">Message (Optional)</label>
+          <textarea class="ctp-form-input ctp-form-textarea" id="cf-msg-pt" name="message" placeholder="Any specific questions or requirements…" rows="3"></textarea>
+        </div>
+        <button type="submit" class="ctp-btn ctp-btn--primary ctp-btn--full">Send Enquiry</button>
+        <p class="ctp-form-note">We respond within 24 hours. No spam, ever.</p>
+      </form>
     </div>
   </div>
 </section>
 
-<script>
-(function(){
-  var form = document.getElementById('ctp-enquiry-form');
-  var success = document.getElementById('ctp-form-success');
-  if(!form) return;
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    var valid = true;
-    form.querySelectorAll('[required]').forEach(function(el){
-      el.style.borderColor = '';
-      if(!el.value.trim()){ el.style.borderColor = '#FC8181'; valid = false; }
-    });
-    if(!valid) return;
-    form.hidden = true;
-    success.hidden = false;
-  });
-
-  /* Sticky nav shrink on scroll */
-  var nav = document.getElementById('ctp-sticky-nav');
-  window.addEventListener('scroll', function(){
-    if(nav) nav.classList.toggle('ctp-sticky-nav--scrolled', window.scrollY > 80);
-  });
-})();
-</script>
-
-<style>
-/* ════════════════════════════════════════════
-   CROWN TOWN PHASE II — FULL PAGE STYLES
-════════════════════════════════════════════ */
-.ctp-wrap { background: var(--cp-navy-deep); min-height: 100vh; color: var(--cp-cream); }
-
-/* Sticky Nav */
-.ctp-sticky-nav {
-  position: sticky; top: 0; z-index: 200;
-  background: rgba(13,15,28,0.95);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(201,161,92,0.15);
-  transition: padding 0.3s, box-shadow 0.3s;
-  padding: 0.7rem 0;
-}
-.ctp-sticky-nav--scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.5); }
-.ctp-sticky-nav__inner { display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap; }
-.ctp-sticky-nav__brand { display:flex; flex-direction:column; gap:0.1rem; }
-.ctp-sticky-nav__name { font-family:var(--font-display); font-size:0.9rem; font-weight:700; color:var(--cp-cream); }
-.ctp-sticky-nav__price { font-size:0.65rem; color:var(--cp-gold); font-weight:600; letter-spacing:0.05em; }
-.ctp-sticky-nav__links { display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap; }
-.ctp-sticky-nav__links a { font-size:0.7rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--cp-white-70); text-decoration:none; transition:color 0.2s; }
-.ctp-sticky-nav__links a:hover { color:var(--cp-gold); }
-.ctp-sticky-nav__cta { background:var(--cp-gold)!important; color:var(--cp-navy-deep)!important; padding:0.4rem 1rem; border-radius:50px; }
-.ctp-sticky-nav__mobile-cta { display:none; background:var(--cp-gold); color:var(--cp-navy-deep); border:none; border-radius:50px; padding:0.45rem 1rem; font-size:0.7rem; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; cursor:pointer; }
-@media(max-width:768px){ .ctp-sticky-nav__links{display:none;} .ctp-sticky-nav__mobile-cta{display:block;} }
-
-/* Back link */
-.ctp-back-link { display:inline-flex; align-items:center; gap:0.4rem; font-size:0.68rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--cp-gold); text-decoration:none; margin-bottom:1.5rem; transition:gap 0.2s; }
-.ctp-back-link:hover { gap:0.7rem; }
-
-/* Tags */
-.ctp-hero__tags { display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:0.75rem; }
-.ctp-tag { font-size:0.58rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; padding:0.25rem 0.7rem; border-radius:50px; border:1px solid rgba(201,161,92,0.25); color:var(--cp-white-70); }
-.ctp-tag--res { background:rgba(99,179,237,0.1); color:#90CDF4; border-color:rgba(99,179,237,0.25); }
-.ctp-tag--avail { background:rgba(72,187,120,0.1); color:#9AE6B4; border-color:rgba(72,187,120,0.25); }
-
-/* Hero — full bleed */
-.ctp-hero {
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  overflow: hidden;
-  background: linear-gradient(135deg, #0D0F1C 0%, #1A1D2E 60%, #12141F 100%);
-}
-.ctp-hero__bg-img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-  z-index: 0;
-}
-.ctp-hero__overlay--full { position:absolute; inset:0; z-index:1; background:radial-gradient(ellipse at 70% 30%, rgba(201,161,92,0.08) 0%, transparent 60%); pointer-events:none; }
-.ctp-hero__overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background:
-    linear-gradient(to top,  rgba(13,15,28,0.97) 0%,  rgba(13,15,28,0.7) 40%, rgba(13,15,28,0.25) 70%, rgba(13,15,28,0.1) 100%),
-    linear-gradient(to right, rgba(13,15,28,0.6) 0%, transparent 60%);
-}
-.ctp-hero__container {
-  position: relative;
-  z-index: 2;
-  padding-top: 2rem;
-  padding-bottom: 4rem;
-}
-.ctp-hero__content { max-width: 680px; }
-.ctp-hero__title { font-family:var(--font-display); font-size:clamp(2.8rem,5.5vw,4.5rem); font-weight:700; color:var(--cp-cream); line-height:1.08; margin:0 0 0.6rem; text-shadow:0 2px 20px rgba(0,0,0,0.5); }
-.ctp-hero__title em { color:var(--cp-gold); font-style:normal; }
-.ctp-hero__sub { font-size:0.82rem; color:rgba(255,255,255,0.75); margin-bottom:2rem; line-height:1.65; }
-.ctp-hero__bsp-row { display:flex; align-items:stretch; gap:0; background:rgba(13,15,28,0.55); backdrop-filter:blur(10px); border:1px solid rgba(201,161,92,0.2); border-radius:12px; overflow:hidden; margin-bottom:2rem; flex-wrap:wrap; max-width:520px; }
-.ctp-hero__bsp-block { padding:0.9rem 1.4rem; display:flex; flex-direction:column; gap:0.2rem; flex:1; min-width:120px; }
-.ctp-hero__bsp-lbl { font-size:0.55rem; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:rgba(255,255,255,0.35); }
-.ctp-hero__bsp-val { font-family:var(--font-display); font-size:1.5rem; font-weight:700; color:var(--cp-gold); line-height:1; }
-.ctp-hero__bsp-unit { font-size:0.8rem; color:rgba(255,255,255,0.6); margin-left:0.2rem; }
-.ctp-hero__divider-v { width:1px; background:rgba(201,161,92,0.15); }
-.ctp-hero__btns { display:flex; gap:1rem; flex-wrap:wrap; }
-
-/* Buttons */
-.ctp-btn-primary { display:inline-flex; align-items:center; gap:0.5rem; padding:0.85rem 1.75rem; background:var(--cp-gold); color:var(--cp-navy-deep); font-size:0.72rem; font-weight:800; letter-spacing:0.15em; text-transform:uppercase; border-radius:50px; text-decoration:none; border:none; cursor:pointer; transition:background 0.25s,transform 0.2s; }
-.ctp-btn-primary:hover { background:var(--cp-gold-light); transform:translateY(-2px); }
-.ctp-btn-outline { display:inline-flex; align-items:center; gap:0.5rem; padding:0.85rem 1.75rem; background:transparent; color:var(--cp-gold); font-size:0.72rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; border-radius:50px; text-decoration:none; border:1.5px solid rgba(201,161,92,0.5); transition:border-color 0.2s,color 0.2s; }
-.ctp-btn-outline:hover { border-color:var(--cp-gold); color:var(--cp-gold-light); }
-
-/* Section wrapper */
-.ctp-section { padding:5rem 0; }
-.ctp-section--alt { background:var(--cp-navy-mid); }
-.ctp-section--dark { background:linear-gradient(160deg,var(--cp-navy-mid) 0%,var(--cp-navy-deep) 100%); }
-.ctp-section-head { margin-bottom:3rem; }
-.ctp-section-head .cp-section-label { display:block; margin-bottom:0.6rem; }
-.ctp-section-title { font-family:var(--font-display); font-size:clamp(1.6rem,3vw,2.4rem); font-weight:700; color:var(--cp-cream); margin:0 0 1rem; }
-.ctp-section-desc { color:var(--cp-white-70); font-size:0.9rem; line-height:1.7; max-width:600px; margin-top:0.75rem; }
-
-/* About */
-.ctp-about-grid { display:grid; grid-template-columns:1fr 380px; gap:3rem; align-items:start; }
-@media(max-width:900px){ .ctp-about-grid{grid-template-columns:1fr;} }
-.ctp-about-text p { color:var(--cp-white-70); line-height:1.8; margin-bottom:1rem; font-size:0.92rem; }
-.ctp-about-text p strong { color:var(--cp-cream); }
-.ctp-about-facts { display:flex; flex-direction:column; gap:1rem; }
-.ctp-fact { display:flex; align-items:flex-start; gap:1rem; padding:1rem 1.25rem; background:var(--cp-navy-light); border:1px solid rgba(201,161,92,0.1); border-radius:10px; }
-.ctp-fact__icon { flex-shrink:0; width:36px; height:36px; display:flex; align-items:center; justify-content:center; background:rgba(201,161,92,0.1); border-radius:8px; color:var(--cp-gold); }
-.ctp-fact__label { font-size:0.58rem; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:var(--cp-white-30); margin-bottom:0.2rem; }
-.ctp-fact__val { font-size:0.82rem; font-weight:600; color:var(--cp-cream); }
-
-/* Highlights */
-.ctp-highlights-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:1.5rem; }
-.ctp-highlight { background:var(--cp-navy-deep); border:1px solid rgba(201,161,92,0.1); border-radius:12px; padding:1.5rem; transition:border-color 0.2s,transform 0.2s; }
-.ctp-highlight:hover { border-color:rgba(201,161,92,0.35); transform:translateY(-4px); }
-.ctp-highlight__icon { width:44px; height:44px; background:rgba(201,161,92,0.1); border-radius:10px; display:flex; align-items:center; justify-content:center; color:var(--cp-gold); margin-bottom:1rem; }
-.ctp-highlight__title { font-family:var(--font-display); font-size:0.95rem; font-weight:600; color:var(--cp-cream); margin-bottom:0.5rem; }
-.ctp-highlight__desc { font-size:0.78rem; color:var(--cp-white-70); line-height:1.6; }
-
-/* Payment Timeline */
-.ctp-payment-timeline { display:flex; flex-direction:column; gap:0; position:relative; max-width:700px; margin:0 auto; }
-.ctp-milestone { display:grid; grid-template-columns:40px 24px 1fr; gap:0 1rem; align-items:start; }
-.ctp-milestone__num { width:40px; height:40px; border-radius:50%; background:rgba(201,161,92,0.1); border:1.5px solid rgba(201,161,92,0.3); display:flex; align-items:center; justify-content:center; font-family:var(--font-display); font-size:0.85rem; font-weight:700; color:var(--cp-gold); flex-shrink:0; }
-.ctp-milestone__num--gold { background:var(--cp-gold); color:var(--cp-navy-deep); border-color:var(--cp-gold); }
-.ctp-milestone__line { width:2px; background:rgba(201,161,92,0.15); margin:8px auto 0; min-height:60px; }
-.ctp-milestone--last .ctp-milestone__line { visibility:hidden; }
-.ctp-milestone__card { background:var(--cp-navy-light); border:1px solid rgba(201,161,92,0.1); border-radius:10px; padding:1rem 1.25rem; margin-bottom:1rem; }
-.ctp-milestone__card--gold { border-color:rgba(201,161,92,0.35); background:rgba(201,161,92,0.07); }
-.ctp-milestone__stage { font-size:0.82rem; color:var(--cp-cream); font-weight:500; margin-bottom:0.3rem; }
-.ctp-milestone__amt { font-family:var(--font-display); font-size:1.1rem; font-weight:700; color:var(--cp-gold); }
-.ctp-milestone__note { font-size:0.68rem; color:var(--cp-white-70); margin-top:0.3rem; line-height:1.5; }
-.ctp-disclaimer { font-size:0.72rem; color:var(--cp-white-30); font-style:italic; text-align:center; margin-top:2rem; max-width:600px; margin-left:auto; margin-right:auto; }
-
-/* Pricing */
-.ctp-pricing-grid { display:grid; grid-template-columns:220px 1fr; gap:2rem; align-items:start; margin-bottom:2.5rem; }
-@media(max-width:768px){ .ctp-pricing-grid{grid-template-columns:1fr;} }
-.ctp-price-card--main { background:linear-gradient(145deg,rgba(201,161,92,0.15),rgba(201,161,92,0.05)); border:1.5px solid rgba(201,161,92,0.4); border-radius:14px; padding:2rem 1.5rem; text-align:center; }
-.ctp-price-card__label { font-size:0.58rem; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:var(--cp-white-30); margin-bottom:0.5rem; }
-.ctp-price-card__val { font-family:var(--font-display); font-size:3.2rem; font-weight:700; color:var(--cp-gold); line-height:1; }
-.ctp-price-card__unit { font-size:0.78rem; color:var(--cp-white-70); margin-top:0.25rem; }
-.ctp-plc-card { background:var(--cp-navy-deep); border:1px solid rgba(201,161,92,0.1); border-radius:14px; overflow:hidden; }
-.ctp-plc-card__title { font-family:var(--font-display); font-size:0.95rem; font-weight:600; color:var(--cp-cream); padding:1rem 1.5rem; border-bottom:1px solid rgba(201,161,92,0.1); background:rgba(201,161,92,0.05); }
-.ctp-table { width:100%; border-collapse:collapse; font-size:0.82rem; }
-.ctp-table td { padding:0.85rem 1.5rem; color:var(--cp-white-70); border-bottom:1px solid rgba(201,161,92,0.06); vertical-align:middle; line-height:1.5; }
-.ctp-table tbody tr:last-child td { border-bottom:none; }
-.ctp-table tbody tr:hover { background:rgba(201,161,92,0.03); }
-.ctp-table__amt { font-weight:700; color:var(--cp-cream); text-align:right; white-space:nowrap; }
-.ctp-note { font-size:0.68rem; color:var(--cp-white-30); padding:0.75rem 1.5rem; font-style:italic; border-top:1px solid rgba(201,161,92,0.06); margin:0; }
-
-/* Notes */
-.ctp-notes-wrap { background:var(--cp-navy-deep); border:1px solid rgba(201,161,92,0.1); border-radius:12px; padding:1.5rem 1.75rem; }
-.ctp-notes-title { display:flex; align-items:center; gap:0.5rem; font-family:var(--font-display); font-size:0.95rem; font-weight:600; color:var(--cp-gold); margin-bottom:1.25rem; padding-bottom:0.75rem; border-bottom:1px solid rgba(201,161,92,0.1); }
-.ctp-notes-list { padding-left:1.3rem; margin:0; display:flex; flex-direction:column; gap:0.65rem; }
-.ctp-notes-list li { font-size:0.75rem; color:var(--cp-white-70); line-height:1.7; }
-.ctp-notes-list li strong { color:var(--cp-cream); }
-
-/* Location */
-/* Gallery */
-.ctp-gallery-grid { display:grid; grid-template-columns:1fr 1fr; grid-template-rows:auto auto; gap:1rem; }
-.ctp-gallery-item--main { grid-row:1 / 3; }
-.ctp-gallery-placeholder { background:var(--cp-navy-light); border:1.5px dashed rgba(201,161,92,0.2); border-radius:14px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0.75rem; color:rgba(201,161,92,0.35); min-height:220px; transition:border-color 0.2s; }
-.ctp-gallery-item--main .ctp-gallery-placeholder { min-height:460px; }
-.ctp-gallery-placeholder span { font-size:0.65rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--cp-white-30); }
-.ctp-gallery-item img { width:100%; height:100%; object-fit:cover; border-radius:14px; display:block; }
-.ctp-gallery-footer { display:flex; justify-content:center; margin-top:2rem; flex-direction:column; align-items:center; gap:1rem; }
-.ctp-gallery-more-btn { display:inline-flex; align-items:center; gap:0.5rem; padding:0.7rem 2rem; }
-.ctp-gallery-hint { font-size:0.78rem; color:var(--cp-white-30); text-align:center; }
-@media(max-width:640px){ .ctp-gallery-grid{grid-template-columns:1fr; grid-template-rows:auto;} .ctp-gallery-item--main{grid-row:auto;} .ctp-gallery-item--main .ctp-gallery-placeholder{min-height:240px;} }
-
-.ctp-location-grid { display:grid; grid-template-columns:300px 1fr; gap:2.5rem; align-items:start; }
-@media(max-width:900px){ .ctp-location-grid{grid-template-columns:1fr;} }
-.ctp-location-item { display:flex; align-items:flex-start; gap:1rem; padding:1rem 0; border-bottom:1px solid rgba(201,161,92,0.08); }
-.ctp-location-item:last-of-type { border-bottom:none; }
-.ctp-location-item__icon { flex-shrink:0; width:34px; height:34px; background:rgba(201,161,92,0.1); border-radius:8px; display:flex; align-items:center; justify-content:center; color:var(--cp-gold); }
-.ctp-location-item__label { font-size:0.58rem; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:var(--cp-white-30); margin-bottom:0.25rem; }
-.ctp-location-item__val { font-size:0.82rem; color:var(--cp-cream); line-height:1.5; }
-.ctp-map-placeholder { background:var(--cp-navy-light); border:1.5px dashed rgba(201,161,92,0.2); border-radius:16px; min-height:380px; display:flex; align-items:center; justify-content:center; }
-.ctp-map-placeholder__inner { text-align:center; padding:2rem; display:flex; flex-direction:column; align-items:center; gap:0.75rem; }
-.ctp-map-placeholder__inner p { font-family:var(--font-display); font-size:1rem; font-weight:600; color:rgba(201,161,92,0.5); margin:0; }
-.ctp-map-placeholder__inner span { font-size:0.68rem; color:var(--cp-white-30); letter-spacing:0.05em; }
-
-/* Contact */
-.ctp-contact-grid { display:grid; grid-template-columns:380px 1fr; gap:4rem; align-items:start; }
-@media(max-width:900px){ .ctp-contact-grid{grid-template-columns:1fr;} }
-.ctp-contact-info .ctp-section-title { margin-bottom:0.75rem; }
-.ctp-contact-item { display:flex; align-items:flex-start; gap:1rem; margin-bottom:1.25rem; }
-.ctp-contact-item__icon { flex-shrink:0; width:36px; height:36px; background:rgba(201,161,92,0.1); border-radius:8px; display:flex; align-items:center; justify-content:center; color:var(--cp-gold); }
-.ctp-contact-item__label { font-size:0.58rem; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:var(--cp-white-30); margin-bottom:0.2rem; }
-.ctp-contact-item__val { font-size:0.85rem; color:var(--cp-cream); }
-
-/* Form */
-.ctp-form-card { background:var(--cp-navy-light); border:1px solid rgba(201,161,92,0.12); border-radius:16px; padding:2rem 2.25rem; }
-.ctp-form__row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
-@media(max-width:600px){ .ctp-form__row{grid-template-columns:1fr;} }
-.ctp-form__group { display:flex; flex-direction:column; gap:0.4rem; margin-bottom:1rem; }
-.ctp-form__label { font-size:0.65rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:var(--cp-white-70); }
-.ctp-form__label span { color:#FC8181; }
-.ctp-form__input { background:rgba(255,255,255,0.04); border:1.5px solid rgba(201,161,92,0.15); border-radius:8px; padding:0.8rem 1rem; color:var(--cp-cream); font-size:0.85rem; font-family:var(--font-body); outline:none; transition:border-color 0.2s,background 0.2s; width:100%; box-sizing:border-box; }
-.ctp-form__input:focus { border-color:var(--cp-gold); background:rgba(201,161,92,0.04); }
-.ctp-form__input::placeholder { color:rgba(255,255,255,0.25); }
-.ctp-form__select { appearance:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23C9A15C' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 1rem center; padding-right:2.5rem; cursor:pointer; }
-.ctp-form__select option { background:#1A1D2E; color:#F5EFE6; }
-.ctp-form__select optgroup { background:#12141F; color:rgba(201,161,92,0.8); font-size:0.7rem; }
-.ctp-form__textarea { resize:vertical; min-height:100px; }
-.ctp-form__submit { display:flex; align-items:center; justify-content:center; gap:0.6rem; width:100%; padding:1rem; background:var(--cp-gold); color:var(--cp-navy-deep); font-size:0.78rem; font-weight:800; letter-spacing:0.15em; text-transform:uppercase; border:none; border-radius:50px; cursor:pointer; transition:background 0.25s,transform 0.2s; margin-top:0.5rem; }
-.ctp-form__submit:hover { background:var(--cp-gold-light); transform:translateY(-2px); }
-.ctp-form__privacy { font-size:0.62rem; color:var(--cp-white-30); text-align:center; margin-top:0.75rem; }
-.ctp-form__success { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1rem; min-height:200px; text-align:center; padding:2rem; }
-.ctp-form__success h3 { font-family:var(--font-display); font-size:1.4rem; color:var(--cp-cream); }
-.ctp-form__success p { font-size:0.85rem; color:var(--cp-white-70); }
-</style>
-
-</div><!-- /.ctp-wrap -->
+</div>
 </body>
 </html>
