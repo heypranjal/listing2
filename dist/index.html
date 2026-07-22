@@ -1575,5 +1575,20 @@
     </div>
   </div>
 </section>
+<script>
+(function(){
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.sr-fade, .sr-left, .sr-right').forEach(function(el){
+    io.observe(el);
+  });
+})();
+</script>
 </body>
 </html>
