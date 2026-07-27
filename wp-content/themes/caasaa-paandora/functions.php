@@ -37,3 +37,81 @@ function caasaa_setup() {
 	);
 }
 add_action( 'after_setup_theme', 'caasaa_setup' );
+
+/* ── Property Custom Post Type ─────────────────────────── */
+function caasaa_register_property_cpt() {
+	register_post_type( 'property', [
+		'labels'       => [
+			'name'          => 'Properties',
+			'singular_name' => 'Property',
+			'add_new_item'  => 'Add New Property',
+			'edit_item'     => 'Edit Property',
+		],
+		'public'        => true,
+		'show_in_rest'  => true,
+		'rest_base'     => 'properties',
+		'supports'      => [ 'title', 'thumbnail', 'excerpt', 'custom-fields' ],
+		'menu_icon'     => 'dashicons-building',
+		'has_archive'   => true,
+		'rewrite'       => [ 'slug' => 'property' ],
+	] );
+}
+add_action( 'init', 'caasaa_register_property_cpt' );
+
+/* ── Property Meta Fields (REST-exposed) ───────────────── */
+function caasaa_register_property_meta() {
+	$string_fields = [
+		'price_range', 'location', 'property_type', 'status',
+		'developer', 'phase_info', 'rera_lda', 'area_range',
+		'total_area', 'contact_phone', 'contact_email', 'brochure_url',
+	];
+	foreach ( $string_fields as $key ) {
+		register_post_meta( 'property', $key, [
+			'type'         => 'string',
+			'single'       => true,
+			'show_in_rest' => true,
+		] );
+	}
+
+	$array_fields = [ 'hero_tags', 'highlights', 'amenities', 'gallery_images' ];
+	foreach ( $array_fields as $key ) {
+		register_post_meta( 'property', $key, [
+			'type'         => 'array',
+			'single'       => true,
+			'show_in_rest' => [
+				'schema' => [ 'type' => 'array', 'items' => [ 'type' => 'string' ] ],
+			],
+		] );
+	}
+
+	// nearby_schools: array of objects {name, distance}
+	register_post_meta( 'property', 'nearby_schools', [
+		'type'         => 'array',
+		'single'       => true,
+		'show_in_rest' => [
+			'schema' => [
+				'type'  => 'array',
+				'items' => [
+					'type'       => 'object',
+					'properties' => [
+						'name'     => [ 'type' => 'string' ],
+						'distance' => [ 'type' => 'string' ],
+					],
+				],
+			],
+		],
+	] );
+}
+add_action( 'init', 'caasaa_register_property_meta' );
+
+/* ── CORS for Headless / Next.js Frontend ──────────────── */
+function caasaa_rest_cors() {
+	remove_filter( 'rest_pre_serve_request', 'rest_send_cors_headers' );
+	add_filter( 'rest_pre_serve_request', function ( $value ) {
+		header( 'Access-Control-Allow-Origin: *' );
+		header( 'Access-Control-Allow-Methods: GET, OPTIONS' );
+		header( 'Access-Control-Allow-Headers: Authorization, Content-Type' );
+		return $value;
+	} );
+}
+add_action( 'rest_api_init', 'caasaa_rest_cors', 15 );
