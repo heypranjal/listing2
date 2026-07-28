@@ -83,6 +83,30 @@
     counterEls.forEach((el) => cObs.observe(el));
   }
 
+  /* ---- Signature Projects Toggle ---- */
+  (function () {
+    const toggleBtn = document.getElementById('proj-toggle-btn');
+    const editorial = document.getElementById('proj-editorial');
+    const allGrid   = document.getElementById('proj-all-grid');
+    if (!toggleBtn || !editorial || !allGrid) return;
+
+    let expanded = false;
+
+    toggleBtn.addEventListener('click', () => {
+      expanded = !expanded;
+      if (expanded) {
+        editorial.style.display = 'none';
+        allGrid.style.display = 'grid';
+        toggleBtn.textContent = 'View Less';
+      } else {
+        editorial.style.display = 'grid';
+        allGrid.style.display = 'none';
+        toggleBtn.textContent = 'View All Projects';
+        document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  })();
+
   /* ---- Project Carousel ---- */
   function initCarousel(wrap) {
     const slides  = wrap.querySelector('.cp-projects__slides');
