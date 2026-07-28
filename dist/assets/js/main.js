@@ -95,13 +95,14 @@
 
     function goTo(idx) {
       current = (idx + items.length) % items.length;
-      slides.style.transform = `translateX(-${current * (100 / items.length)}%)`;
+      slides.style.transform = `translateX(-${current * wrap.offsetWidth}px)`;
       dots.forEach((d, i) => d.classList.toggle('active', i === current));
     }
 
     prevBtn?.addEventListener('click', () => { clearInterval(autoTimer); goTo(current - 1); autoPlay(); });
     nextBtn?.addEventListener('click', () => { clearInterval(autoTimer); goTo(current + 1); autoPlay(); });
     dots.forEach((d, i) => d.addEventListener('click', () => { clearInterval(autoTimer); goTo(i); autoPlay(); }));
+    window.addEventListener('resize', () => goTo(current));
 
     function autoPlay() {
       autoTimer = setInterval(() => goTo(current + 1), 5000);
