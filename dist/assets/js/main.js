@@ -186,7 +186,7 @@
       const visible = [];
 
       allCards.forEach(card => {
-        const matches = currentFilter === 'all' || card.dataset.type === currentFilter;
+        const matches = currentFilter === 'all' || card.dataset.type.split(" ").includes(currentFilter);
         if (matches) visible.push(card);
         card.hidden = !matches;
       });
