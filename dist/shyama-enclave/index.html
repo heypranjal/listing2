@@ -789,8 +789,30 @@
       if(!el.value.trim()){ el.style.borderColor = '#FC8181'; valid = false; }
     });
     if(!valid) return;
-    form.hidden = true;
-    success.hidden = false;
+    var btn = form.querySelector('.ctp-form__submit');
+    var btnText = btn && btn.querySelector('.ctp-form__submit-text');
+    var origText = btnText ? btnText.textContent : '';
+    if(btnText) btnText.textContent = 'Sending…';
+    if(btn) btn.disabled = true;
+    var fd = new FormData(form);
+    var data = {};
+    fd.forEach(function(v, k){ data[k] = v; });
+    fetch('/api/mail/enquiry', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    }).then(function(r){ return r.json(); }).then(function(json){
+      if(json.success){
+        form.hidden = true;
+        success.hidden = false;
+      } else {
+        if(btnText) btnText.textContent = 'Try Again';
+        if(btn) btn.disabled = false;
+      }
+    }).catch(function(){
+      if(btnText) btnText.textContent = 'Error — Retry';
+      if(btn) btn.disabled = false;
+    });
   });
   var nav = document.getElementById('ctp-sticky-nav');
   window.addEventListener('scroll', function(){
