@@ -2,6 +2,8 @@
   "version": 2,
   "outputDirectory": "dist",
   "routes": [
+    { "src": "/api/mail/enquiry",    "dest": "/api/mail/enquiry.js" },
+    { "src": "/api/mail/site-visit", "dest": "/api/mail/site-visit.js" },
     { "src": "/apna-town/?",                "dest": "/apna-town/index.html" },
     { "src": "/crown-town/?",               "dest": "/crown-town/index.html" },
     { "src": "/crown-town-phase-2/?",       "dest": "/crown-town-phase-2/index.html" },

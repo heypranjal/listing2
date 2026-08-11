@@ -243,16 +243,41 @@
     }, { passive: true });
   })();
 
-  /* ---- Form Validation (basic) ---- */
+  /* ---- Form Submit → Mailer API ---- */
+  const MAILER_BASE = '/api/mail';
+
   document.querySelectorAll('.cp-contact__form, .cp-hero-form').forEach((form) => {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const btn = form.querySelector('button[type="submit"]');
-      if (btn) {
-        const orig = btn.textContent;
-        btn.textContent = 'Sent!';
-        btn.disabled = true;
-        setTimeout(() => { btn.textContent = orig; btn.disabled = false; }, 3000);
+      const orig = btn ? btn.textContent : '';
+      if (btn) { btn.textContent = 'Sending…'; btn.disabled = true; }
+
+      const fd = new FormData(form);
+      const isSiteVisit = fd.get('preferredDate') || fd.get('preferredTime');
+      const endpoint = isSiteVisit ? `${MAILER_BASE}/site-visit` : `${MAILER_BASE}/enquiry`;
+
+      const body = {};
+      fd.forEach((val, key) => { body[key] = val; });
+
+      try {
+        const res = await fetch(endpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(body),
+        });
+        const json = await res.json();
+        if (res.ok && json.success) {
+          if (btn) { btn.textContent = 'Sent!'; }
+          form.reset();
+          setTimeout(() => { if (btn) { btn.textContent = orig; btn.disabled = false; } }, 3000);
+        } else {
+          if (btn) { btn.textContent = 'Try Again'; btn.disabled = false; }
+          console.error('[form]', json);
+        }
+      } catch (err) {
+        if (btn) { btn.textContent = 'Error — Retry'; btn.disabled = false; }
+        console.error('[form fetch]', err);
       }
     });
   });
