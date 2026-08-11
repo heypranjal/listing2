@@ -43,6 +43,3 @@ Thumbs.db
 
 # ── Node ─────────────────────────────────────────────────────
 node_modules/
-
-# ── Mailer credentials (use env variables) ───────────────────
-server/config/mailer.js
