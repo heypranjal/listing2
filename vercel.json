@@ -3,6 +3,11 @@
   "outputDirectory": "dist",
   "routes": [
     { "src": "/api/mail/enquiry",    "dest": "/api/mail/enquiry.js" },
+{
+  "src": "/api/properties",
+  "dest": "/api/properties.js"
+},
+
     { "src": "/api/mail/site-visit", "dest": "/api/mail/site-visit.js" },
     { "src": "/apna-town/?",                "dest": "/apna-town/index.html" },
     { "src": "/crown-town/?",               "dest": "/crown-town/index.html" },
