@@ -1530,7 +1530,7 @@
       </div>
     </div>
   </div>
-</section>
+</section>---
 
 <!-- ======================================================
      SECTION 8: CONTACT
@@ -1580,7 +1580,174 @@
     io.observe(el);
   });
 })();
+//addesd new code 
+async function loadWordPressProperties() {
+  try {
+    const response = await fetch('/api/properties');
+
+    if (!response.ok) {
+      throw new Error('Could not load WordPress properties');
+    }
+
+    const properties = await response.json();
+
+    if (!Array.isArray(properties) || properties.length === 0) {
+      return;
+    }
+
+    // Find the listing grid by locating an existing property card
+    const firstCard = document.querySelector('.cp-listing-card');
+
+    if (!firstCard) {
+      console.error('Property listing grid not found');
+      return;
+    }
+
+    const grid = firstCard.parentElement;
+
+    properties.forEach(function(property) {
+      const acf = property.acf || {};
+
+      const title =
+        property.title && property.title.rendered
+          ? property.title.rendered
+          : 'Property';
+
+      const slug = property.slug || '';
+
+      const type = acf.property_type || 'property';
+      const status = acf.property_status || 'available';
+
+      const initials = title
+        .split(' ')
+        .filter(Boolean)
+        .slice(0, 2)
+        .map(function(word) {
+          return word.charAt(0).toUpperCase();
+        })
+        .join('');
+
+      const card = document.createElement('a');
+
+      card.href = '/property/' + slug;
+      card.className =
+        'cp-listing-card cp-listing-card--linked wp-property-card';
+
+      card.dataset.type = type;
+
+      card.innerHTML = `
+        <div class="cp-listing-card__img">
+          <div class="cp-listing-card__img-border"></div>
+
+          <div class="cp-listing-card__img-watermark" aria-hidden="true">
+            <svg viewBox="0 0 80 80" fill="none">
+              <circle cx="40" cy="40" r="38"
+                stroke="#C9A15C"
+                stroke-width="1"/>
+              <polygon
+                points="40,4 42,38 76,40 42,42 40,76 38,42 4,40 38,38"
+                fill="none"
+                stroke="#C9A15C"
+                stroke-width="1"/>
+              <circle cx="40" cy="40" r="4" fill="#C9A15C"/>
+            </svg>
+          </div>
+
+          <div class="cp-listing-card__img-icon">
+            <span class="cp-listing-card__img-initials">${initials}</span>
+            <span class="cp-listing-card__img-label">
+              Image Coming Soon
+            </span>
+          </div>
+        </div>
+
+        <div class="cp-listing-card__body">
+          <span class="cp-listing-card__type">
+            ${formatPropertyType(type)}
+          </span>
+
+          <h3 class="cp-listing-card__name">${title}</h3>
+
+          <div class="cp-listing-card__footer">
+            <span class="cp-listing-card__enquire">
+              View Details
+              <svg width="12" height="12"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </span>
+
+            <span class="cp-listing-card__status">
+              ${capitalize(status)}
+            </span>
+          </div>
+        </div>
+      `;
+
+      grid.appendChild(card);
+    });
+
+    updatePropertyTotal(properties.length);
+
+  } catch (error) {
+    console.error('WordPress property loading error:', error);
+  }
+}
+
+
+function formatPropertyType(type) {
+  const labels = {
+    apartment: '● Apartment',
+    commercial: '● Commercial',
+    villa: '✦ Villa',
+    duplex: '✦ Duplex & Villa',
+    plot: '■ Plots',
+    plots: '■ Plots'
+  };
+
+  return labels[type] || '● Property';
+}
+
+
+function capitalize(value) {
+  if (!value) return 'Available';
+
+  return (
+    value.charAt(0).toUpperCase() +
+    value.slice(1).replace(/-/g, ' ')
+  );
+}
+
+
+function updatePropertyTotal(newProperties) {
+  const labels = document.querySelectorAll(
+    '.cp-listings__summary-label'
+  );
+
+  labels.forEach(function(label) {
+    if (label.textContent.trim() === 'Total Properties') {
+      const number = label.previousElementSibling;
+
+      if (number) {
+        const currentTotal =
+          parseInt(number.textContent, 10) || 0;
+
+        number.textContent =
+          currentTotal + newProperties;
+      }
+    }
+  });
+}
+
+
+loadWordPressProperties();
+//above lines are added
 </script>
 <!-- /wp:html -->
 
 <!-- wp:template-part {"slug":"footer","tagName":"div"} /-->
+=
