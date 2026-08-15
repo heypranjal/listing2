@@ -1580,7 +1580,12 @@
     io.observe(el);
   });
 })();
-//addesd new code 
+</script>
+
+//added
+
+  <!-- wp:html -->
+<script>
 async function loadWordPressProperties() {
   try {
     const response = await fetch('/api/properties');
@@ -1595,7 +1600,6 @@ async function loadWordPressProperties() {
       return;
     }
 
-    // Find the listing grid by locating an existing property card
     const firstCard = document.querySelector('.cp-listing-card');
 
     if (!firstCard) {
@@ -1614,7 +1618,6 @@ async function loadWordPressProperties() {
           : 'Property';
 
       const slug = property.slug || '';
-
       const type = acf.property_type || 'property';
       const status = acf.property_status || 'available';
 
@@ -1639,25 +1642,9 @@ async function loadWordPressProperties() {
         <div class="cp-listing-card__img">
           <div class="cp-listing-card__img-border"></div>
 
-          <div class="cp-listing-card__img-watermark" aria-hidden="true">
-            <svg viewBox="0 0 80 80" fill="none">
-              <circle cx="40" cy="40" r="38"
-                stroke="#C9A15C"
-                stroke-width="1"/>
-              <polygon
-                points="40,4 42,38 76,40 42,42 40,76 38,42 4,40 38,38"
-                fill="none"
-                stroke="#C9A15C"
-                stroke-width="1"/>
-              <circle cx="40" cy="40" r="4" fill="#C9A15C"/>
-            </svg>
-          </div>
-
           <div class="cp-listing-card__img-icon">
             <span class="cp-listing-card__img-initials">${initials}</span>
-            <span class="cp-listing-card__img-label">
-              Image Coming Soon
-            </span>
+            <span class="cp-listing-card__img-label">Image Coming Soon</span>
           </div>
         </div>
 
@@ -1670,15 +1657,7 @@ async function loadWordPressProperties() {
 
           <div class="cp-listing-card__footer">
             <span class="cp-listing-card__enquire">
-              View Details
-              <svg width="12" height="12"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2.5">
-                <line x1="5" y1="12" x2="19" y2="12"/>
-                <polyline points="12 5 19 12 12 19"/>
-              </svg>
+              View Details →
             </span>
 
             <span class="cp-listing-card__status">
@@ -1698,7 +1677,6 @@ async function loadWordPressProperties() {
   }
 }
 
-
 function formatPropertyType(type) {
   const labels = {
     apartment: '● Apartment',
@@ -1712,21 +1690,16 @@ function formatPropertyType(type) {
   return labels[type] || '● Property';
 }
 
-
 function capitalize(value) {
   if (!value) return 'Available';
 
-  return (
-    value.charAt(0).toUpperCase() +
-    value.slice(1).replace(/-/g, ' ')
-  );
+  return value.charAt(0).toUpperCase() +
+    value.slice(1).replace(/-/g, ' ');
 }
 
-
 function updatePropertyTotal(newProperties) {
-  const labels = document.querySelectorAll(
-    '.cp-listings__summary-label'
-  );
+  const labels =
+    document.querySelectorAll('.cp-listings__summary-label');
 
   labels.forEach(function(label) {
     if (label.textContent.trim() === 'Total Properties') {
@@ -1736,17 +1709,18 @@ function updatePropertyTotal(newProperties) {
         const currentTotal =
           parseInt(number.textContent, 10) || 0;
 
-        number.textContent =
-          currentTotal + newProperties;
+        number.textContent = currentTotal + newProperties;
       }
     }
   });
 }
 
-
 loadWordPressProperties();
-//above lines are added
 </script>
+<!-- /wp:html -->
+
+//added
+
 <!-- /wp:html -->
 
 <!-- wp:template-part {"slug":"footer","tagName":"div"} /-->
