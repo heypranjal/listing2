@@ -38,26 +38,6 @@ function caasaa_setup() {
 }
 add_action( 'after_setup_theme', 'caasaa_setup' );
 
-/* ── Property Custom Post Type ─────────────────────────── */
-function caasaa_register_property_cpt() {
-	register_post_type( 'property', [
-		'labels'       => [
-			'name'          => 'Properties',
-			'singular_name' => 'Property',
-			'add_new_item'  => 'Add New Property',
-			'edit_item'     => 'Edit Property',
-		],
-		'public'        => true,
-		'show_in_rest'  => true,
-		'rest_base'     => 'properties',
-		'supports'      => [ 'title', 'thumbnail', 'excerpt', 'custom-fields' ],
-		'menu_icon'     => 'dashicons-building',
-		'has_archive'   => true,
-		'rewrite'       => [ 'slug' => 'property' ],
-	] );
-}
-add_action( 'init', 'caasaa_register_property_cpt' );
-
 /* ── Property Meta Fields (REST-exposed) ───────────────── */
 function caasaa_register_property_meta() {
 	$string_fields = [
