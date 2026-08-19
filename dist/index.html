@@ -1540,6 +1540,9 @@ async function loadWordPressProperties() {
         })
         .join('');
 
+      const featuredImage =
+          property._embedded?.['wp:featuredmedia']?.[0]?.source_url || '';
+
       const card = document.createElement('a');
 
       card.href = '/property/' + slug;
@@ -1549,14 +1552,26 @@ async function loadWordPressProperties() {
       card.dataset.type = type;
 
       card.innerHTML = `
-        <div class="cp-listing-card__img">
-          <div class="cp-listing-card__img-border"></div>
+${featuredImage ? `
+  <div class="cp-listing-card__img">
+    <div class="cp-listing-card__img-border"></div>
+    <img
+      src="${featuredImage}"
+      alt="${title}"
+      style="width:100%;height:100%;object-fit:cover;display:block;"
+      loading="lazy"
+    />
+  </div>
+` : `
+  <div class="cp-listing-card__img">
+    <div class="cp-listing-card__img-border"></div>
+    <div class="cp-listing-card__img-icon">
+      <span class="cp-listing-card__img-initials">${initials}</span>
+      <span class="cp-listing-card__img-label">Image Coming Soon</span>
+    </div>
+  </div>
+`}
 
-          <div class="cp-listing-card__img-icon">
-            <span class="cp-listing-card__img-initials">${initials}</span>
-            <span class="cp-listing-card__img-label">Image Coming Soon</span>
-          </div>
-        </div>
 
         <div class="cp-listing-card__body">
           <span class="cp-listing-card__type">
